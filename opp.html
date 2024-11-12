@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opp</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        constructor(name, model, color) {
+          this.name = name;
+          this.model = model;
+          this.color = color;
+        }
+        info() {
+          console.log(`Car name is :${this.name}`);
+          console.log(`Model name is :${this.model}`);
+          console.log(`Color name is :${this.color}`);
+        }
+      }
+      const about = new Car("Bmw", "Rc-271", "Royle-Black");
+      console.log(about.info());
+      class Bike extends Car {
+        constructor(name, model, color, speed) {
+          super(name, model, color);
+          this.speed = speed;
+        }
+        showSpeed() {
+          return (spd = "Run first");
+        }
+      }
+      var p = new Bike("Honda", "VX-2007", "Black", "150");
+      console.log(
+        `The bike name ${p.name} , the bike model ${p.model} , the bike color${p.color} , the bike speed/cc ${p.speed}`
+      );
+
+      class Home extends Bike {
+        constructor(onwer, name, model, color, speed) {
+          super(name, model, color, speed);
+          this.onwer = onwer;
+        }
+        name1 = "Hello";
+      }
+      var home = new Home(
+        "Md Ismail Hossain",
+        "Tajvla",
+        "Duplex",
+        "skyblue",
+        "three"
+      );
+      console.log(
+        `${home.onwer}is the onwer of this House.\nThe name  of the House is ${home.name}.\nThe model of the house ${home.model}.\nThe color of the house is ${home.color}.\nThe house is ${home.speed}.\n${home.name1}`
+      );
+
+      class Me extends Home {
+        constructor(onwer, name, model, color, speed, address) {
+          super(onwer, name, model, color, speed);
+          this.address = address;
+        }
+      }
+      var aboutme = new Me(
+        "Ismail",
+        "NIla",
+        "Tiplex",
+        "Black",
+        "two",
+        "Dhaka -1207"
+      );
+      console.log(
+        `${aboutme.onwer}the\n${aboutme.name}the\n${aboutme.model}the\n${aboutme.color}the\n${aboutme.speed}the\n${aboutme.address}`
+      );
+    </script>
+  </body>
+</html>
