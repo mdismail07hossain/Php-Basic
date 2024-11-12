@@ -27,5 +27,5 @@ $d="14";
 $h=98;
 echo $d+$h;
 var_dump($d);
-
+print "<br>"."Ismail"." "."Hosaain";
 ?>
