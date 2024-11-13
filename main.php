@@ -49,4 +49,9 @@ elseif($n>=60 ){
     echo"Your are fail.";
 }
 
+echo $_POST['fname'];
 ?>
+<form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+<input type="text" name="fname" >
+<input type="submit" name="submit" >
+</form>
