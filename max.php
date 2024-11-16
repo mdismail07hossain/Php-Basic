@@ -7,7 +7,7 @@
 </head>
 <body>
     <form method="post">
-     Number1:   <input type="number" name="num1" id="num1" ><br><br>
+     Number1:   <input type="number" name="num1" id="num1"  ><br><br>
      Number2:   <input type="number" name="num2" id="num2" ><br><br>
      Number3:   <input type="number" name="num3" id="num3" ><br><br>
         <input type="submit" name="submit" value="submit">
