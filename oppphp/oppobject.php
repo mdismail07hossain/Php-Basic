@@ -1,4 +1,6 @@
 <?php
+// static object call 
+
 class Car{
     public $name="BMW";
     public $model="M-1200";
@@ -18,6 +20,9 @@ echo"<br>";
 echo $car->info();
 echo"<br>";
 
+// dynamic object call use get/set
+
+
 class Mycar{
     public $name;
     public $model;
@@ -36,4 +41,38 @@ class Mycar{
 $mycar=new Mycar();
 $mycar->set_name("BMW","M-1200","Black");
 echo $mycar-> get_name();
+
+// dynamic object call use get/set
+
+class Bike{
+    public $name;
+    public $model;
+
+    function set_name($bikename,$bikemodel){
+        $this->name=$bikename;
+        $this->model=$bikemodel;
+    }
+    function get_name(){
+        return "Bike name is :". $this->name . "<br>". "Bike model is :". $this->model;
+    }
+}
+$mybike=new Bike();
+$mybike->set_name("HONDA","AC-1007");
+echo $mybike->get_name();
+
+// dynamic object call with out  use get/set
+
+class Men{
+    public $name;
+    public $age;
+
+    function info($uname, $aname){
+    $this->age = $aname;
+    $this->name = $uname . $this->age;
+    return $this->name;
+}
+
+}
+$men=new Men();
+echo $men->info("<br> Name: Ismail", " <br> Age: 25");
 ?>

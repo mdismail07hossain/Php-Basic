@@ -43,8 +43,7 @@
 
     <?php
     if($_POST){
-            $number=$_POST['number'];
-    // echo"<h3> Find this number  Factorial   </h3> ";
+     $number=$_POST['number'];
     $fact=1;
     for($i=2;$i<=$number;$i++){
         $fact=$fact*$i;
