@@ -38,5 +38,41 @@
                     echo $obj->det("<br>Father Name: Azad","<br>Mother Name: Morium");
                     echo $obj->info("<br>Age : 25","<br>Email : ismail@gmail.com");
                     echo $obj->add("<br>House : Taj Vla","<br> Roda no. : 256/G");
+                    
+                    // Trait use in php 
+
+                    trait Student{
+                        public $name="Md Ismail";
+                        public function studentsname(){
+                           return $this->name;
+                        }
+                    }
+                    trait StudentIDs{
+                        public $ids="1285247";
+                        public function studentsids(){
+                            return $this->ids;
+                        }
+                    }
+                    trait StudentClass{
+                        public $stuclass="PWED-62";
+                        public function studentsclass(){
+                            return $this->stuclass;
+                        }
+                    }
+                    class StudentsInfo{
+                        use Student,StudentIDs,StudentClass;
+                        function info(){
+                            echo "<br> This is all Data of students.";
+                        }
+                    }
+                            $obj=new StudentsInfo();
+                            echo "<br>";
+                        echo $obj->studentsname();
+                            echo "<br>";
+                        echo $obj->studentsids();
+                            echo "<br>";
+                        echo $obj->studentsclass();
+                        echo $obj->info();
+
 
             ?>
