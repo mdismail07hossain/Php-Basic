@@ -48,7 +48,7 @@
         echo MyClass::$value;
         MyClass::display(); 
 
-        class MyClass{
+    /*    class MyClass{
             public static $name = "Hazrat Ali";
 
             public static function myName(){
@@ -60,7 +60,7 @@
         echo "<br>";
         echo MyClass::$name;
  
-
+*/
 
      class ParentClass {
         public function sayHello() {
