@@ -75,4 +75,66 @@ class Men{
 }
 $men=new Men();
 echo $men->info("<br> Name: Ismail", " <br> Age: 25");
+
+// Trait oparetor use to inhariad porpartis
+
+trait Ismail{
+    public $age;
+    public $email;
+    public function info($ages,$emails){
+        $this->age=$ages;
+        $this->email=$emails .$this->age;
+        return $this->email;
+    }
+}
+trait Detail {
+    public $fathername;
+    public $mothername;
+    public function det($faname,$moname){
+        $this->fathername=$faname;
+        $this->mothername=$moname .$this->fathername;
+        return $this->mothername;
+    }
+}
+trait Address{
+    public $houseno;
+    public $roda;
+    public function add($hono,$rono){
+        $this->houseno=$hono;
+        $this->roda=$rono .$this->houseno;
+        return $this->roda;
+    }
+}
+class Myself{
+    use Ismail,Detail,Address;
+    public function myself(){
+        echo "this the main function";
+    }
+}
+$obj=new Myself();
+echo $obj->det("<br>Father Name: Azad","<br>Mother Name: Morium");
+echo $obj->info("<br>Age : 25","<br>Email : ismail@gmail.com");
+echo $obj->add("<br>House : Taj Vla","<br> Roda no. : 256/G");
+
+// protected and private boths diffarenec
+
+class User{
+    protected $nid;
+    protected $nidno;
+    public function Nid($nidn,$nido){
+        $this->nidno=$nido;
+        $this->nid=$nidn . $this->nidno;
+        return $this->nid;
+    }
+}
+class Useres extends User{
+    public function userdetails($nids){
+        echo $nids;
+        
+    }
+}
+$obj=new Useres();
+// Call Nid method to set $nid, then pass it to userdetails
+$nidValue = $obj->Nid("<br>Md Ismail Hossain", "<br> 83439456");  // Example to set the nid
+$obj->userdetails($nidValue);  // Pass the $nid value to userdetails() method
 ?>
