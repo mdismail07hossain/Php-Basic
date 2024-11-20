@@ -40,4 +40,36 @@
             // Cat ক্লাসের অবজেক্ট তৈরি
             $cat = new Cat();
             $cat->sound();   // আউটপুট: Meow! Meow!
+
+
+        // Abestract ar kicu try 
+
+        abstract class Student{
+            abstract function stuinfo();
+            abstract function stufo();
+          }
+        class Studentinfo extends Student{
+            function stuinfo(){
+                echo "<br> All Students Information Here !";
+            }
+            function stufo(){
+                echo "<br> All Students Information Here !";
+            }
+        }
+        class School extends Student{
+            function stuinfo(){
+                echo "<br> School Name is Monipur High School & Collage .";
+            }
+            function stufo(){
+                echo "<br> School Name is Monipur High School & Collage .";
+            }
+        }
+    $obj=new Studentinfo();
+    $obj->stuinfo();
+    $obj=new School();
+    $obj->stuinfo();
+    $obj=new Studentinfo();
+    $obj->stufo();
+    $obj=new School();
+    $obj->stufo();
 ?>
