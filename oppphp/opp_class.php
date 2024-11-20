@@ -19,7 +19,7 @@
         // echo $newobj->info();
 
 
-   /*      class Bike extends Car {
+        class Bike extends Car {
             public $color="Black";
 
          function __construct($name, $model, $color) {
@@ -36,8 +36,8 @@
         $mybike = new Bike("Yamaha", "R15", "Blue"); 
         $mybike->detaits();
         echo $mybike->name . " is My Bike . <br>" . $mybike->model . " this is my Bike model.<br> " . $mybike->color . " this is my Bike color.<br> " ;
-         */
-/* 
+         
+ 
         class MyClass{
             public static $value = "Hello 1, 2, 3, 4 Hello! <br>";
             public static function display(){
@@ -46,8 +46,8 @@
         }
 
         echo MyClass::$value;
-        MyClass::display(); */
-/* 
+        MyClass::display(); 
+
         class MyClass{
             public static $name = "Hazrat Ali";
 
@@ -59,10 +59,10 @@
         echo MyClass::myName();
         echo "<br>";
         echo MyClass::$name;
- */
+ 
 
 
-   /*  class ParentClass {
+     class ParentClass {
         public function sayHello() {
             return "Hello from ParentClass!";
         }
@@ -77,10 +77,10 @@
     $obj = new ChildClass();
     echo $obj->sayHello();  // আউটপুট: Hello from ParentClass! Hello from ChildClass!
 
-    $obj instanceof ChildClass; */
+    $obj instanceof ChildClass; 
 
 
-    /* class Animal {
+     class Animal {
         public function speak() {
             echo "Animal is speaking.";
         }
@@ -100,9 +100,9 @@
     } else {
         echo "The object is not an instance of Dog.";
     }
- */
+ 
 
-/*     class Parentc{
+    class Parentc{
         public function parentClass(){
             echo "This is parent class!";
         }
@@ -121,4 +121,4 @@
     }else{
         echo "The boject is not an instance of Parent!";
     }
-?> */
+?> 
