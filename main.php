@@ -34,7 +34,7 @@ $text = "Hello I am Ismail";
 echo substr($text,11,6);
 echo "<br>";
 // get gerade point 
-$n=40;
+$n=90;
 if($n>=90 && $n<=100){
     echo"Your mark $n You got A+.";
 }elseif($n>=80 ){
@@ -51,7 +51,3 @@ elseif($n>=60 ){
 
 echo $_POST['fname'];
 ?>
-<form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
-<input type="text" name="fname" >
-<input type="submit" name="submit" >
-</form>
