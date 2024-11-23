@@ -13,6 +13,7 @@ if(isset($_POST["btnSubmit"])){
 		$GraduateStudentobj->save();
 		echo "Success!";
 }
+
 ?>
 
 <!doctype html>
@@ -41,8 +42,11 @@ if(isset($_POST["btnSubmit"])){
 	<input type="submit" name="btnSubmit" value="Submit" />
 	</div>
 </form>
+
 <?php
  Student::display_students();
+
 ?>
+
 </body>
 </html>
