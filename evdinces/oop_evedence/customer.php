@@ -2,8 +2,6 @@
 //Step 2:
 require_once("cus.php");
 
-
-
 if(isset($_POST["bSubmit"])){
 
     $cusid=$_POST["cusId"];
@@ -13,6 +11,9 @@ if(isset($_POST["bSubmit"])){
     $obj->save_data();
     echo "Thank you for your buying..";
 }
+
+//  Customer::cus_all();
+
 ?>
 
 <!doctype html>
@@ -23,7 +24,7 @@ if(isset($_POST["bSubmit"])){
 </head>
 
 <body>
-<form action="#" method="post">
+<form action="" method="post" >
 	<div>
 	Customaer_ID :<br/>
 	<input type="text" name="cusId" />
