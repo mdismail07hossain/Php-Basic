@@ -16,14 +16,31 @@ class Customer{
         
        file_put_contents(self::$cus_data, $this->cusdata(), FILE_APPEND);
     }
-    public static function cus_all(){
-        $customers=file(self::$cus_data);
-         echo "<b>ID | Name</b><br/>";
-        foreach($customers as $customer){
-            list($cusId,$name)=explode(",",trim($customer));
-            echo "$cusId | $name <br>";
+    public static function cus_all() {
+            $customer = file(self::$cus_data);
+        
+            echo "
+            <table style='margin-left: 50%; padding-bottom: 10; font-size: 1.25rem; border-collapse: collapse;'>
+                <thead>
+                    <tr>
+                        <th style='border: 1px solid black; padding: 8px;'>Name</th>
+                        <th style='border: 1px solid black; padding: 8px;'>Email</th>
+                    </tr>
+                </thead>
+                <tbody>";
+                foreach ($customer as $customers) {
+                list($cusId, $name,) = explode(",", trim($customers));
+                echo "
+                <tr>
+                    <td style='border: 1px solid black; padding: 8px;'>$cusId</td>
+                    <td style='border: 1px solid black; padding: 8px;'>$name</td>
+                </tr>";
+            }
+            echo "
+                </tbody>
+            </table>";
         }
-    }
+        
 
 }
 ?>
