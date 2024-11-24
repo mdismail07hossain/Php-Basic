@@ -1,5 +1,5 @@
 <?php
-require('student.php');
+require('studata.php');
 
 if (isset($_POST['submitBtn'])) {
     $name = $_POST['name'];

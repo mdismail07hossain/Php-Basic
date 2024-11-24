@@ -1,14 +1,14 @@
  <?php
 
     
-/*
+
 class Students {
     public $name;
     public $id;
     public $batch;
 
     public static $file_path = 'student_data.txt';
-}
+
     public function __construct($_name, $_id, $_batch)
     {
         $this->name = $_name;
@@ -36,7 +36,7 @@ class Students {
         
         $row_count = 0;
         foreach($students as $student){
-            list($name, $id, $batch) = explode(", ", trim($student));
+            list($name,$id,$batch) = explode(", ", trim($student));
 
             // Alternate row colors (gray and white)
             $row_color = ($row_count % 2 == 0) ? 'background-color: white;' : 'background-color: #a9dfbf;';
@@ -51,5 +51,5 @@ class Students {
         }
         echo "</table>";
     }
-
-?> */
+}
+?> 

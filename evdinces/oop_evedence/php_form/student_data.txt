@@ -1,6 +1,2 @@
-1247247,ismail,56
-1247247,ismail,56
-1247247,ismail,56
-1247247,ismail,56
-1247247,ismail,56
-1247247,ismail,56
+Robin, 52, 62
+ismail, 1285247, 62
