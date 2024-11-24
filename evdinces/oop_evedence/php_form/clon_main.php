@@ -1,83 +1,94 @@
 <?php
-require("studata.php");
+require('student.php');
 
-if(isset($_POST["btnSubmit"])){
-    $id=$_POST['txtId'];
-    $name=$_POST['txtName'];
-    $batch=$_POST['Batch'];
-    $obj=new Student($id,$name,$batch);
-    $obj->data_sava();
-    echo  "save_data";
+if (isset($_POST['submitBtn'])) {
+    $name = $_POST['name'];
+    $id = $_POST['id'];
+    $batch = $_POST['batch'];
+
+    // Check if any field is empty
+    if (empty($name) || empty($id) || empty($batch)) {
+        echo "<script>alert('All fields are required plz!');</script>"; // Display error message
+    } else {
+        // Create a new student instance if all fields are filled
+        $student = new Students($name, $id, $batch);
+        $student->SaveData();
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    body{
-				 background: #d1d1d1;
-			}
-			section{
-				margin-top:200px;
-				margin-left:200px;
-				width: 400px;
-			}
-			form{
-				padding:20px 30px;
-				background-color:white;
-				border-radius: 10px;
-				box-shadow: 6px 6px 15px rgb(170, 170, 170);
-			}
-			input{
-				width: 100%;
-				padding: 10px;
-				border: 2px solid #8b8b8b;
-				outline: none;
-				border-radius: 6px;
-				margin-top: 10px;
-				margin-bottom: 7px;
-			}
-			#button{
-				width: 100%;
-				padding: 10px;
-				background-color: #bb00bbc7;
-				color: #fff;
-				margin-top: 20px;
-				border-radius: 7px;
-				font-size: 21px;
-				text-align: center;
-			}
-</style>
-<div class="form">
-    <body>
-    <form action="#" method="post">
-	<div>
-	ID :<br/>
-	<input type="text" name="txtId" />
-	</div>
-	<div>
-	Name :<br/>
-	<input type="text" name="txtName" />
-	</div>
-	<div>
-	Batch :<br/>
-	<input type="text" name="Batch" />
-	</div>
-	<div>
-	<input type="submit" name="btnSubmit" value="Submit" />
-	</div>
-</form>
-</div>
+    <title>Post data and get data show table</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 300px;
+            margin: 0  100px 0 100px;
+            padding: 40px 20px;
+            border-radius: 5px;
+            float: left;
+            background-color: #58d68d;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }
 
-<section>
-    
-<?php
-Student::result();
-?>
-</section>
+        #wrap{
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+
+        #wrap > label{
+            font-size: 18px;
+            font-weight: 400;
+            font-family: sans-serif;
+        }
+        #wrap > input{
+            margin-bottom: 15px;
+            padding: 8px 12px;
+        }
+        #btn{
+            width: 100px;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+           background-color: #27ae60;
+           font-size: 18px;
+           font-weight: 500;
+           color: #fff;
+        }
+       
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <div id="wrap">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div id="wrap">
+            <label for="id">Id</label>
+            <input type="text" name="id" id="id">
+        </div>
+        <div id="wrap">
+            <label for="batch">Batch</label>
+            <input type="text" name="batch" id="batch">
+        </div>
+       <div style="margin: 0 auto; margin-top: 20px">
+         <button type="submit" name="submitBtn" id="btn" value="submit">Submit</button>
+       </div>
+    </form>
 </body>
 </html>
+
+<?php
+Students::Displayinfo();
+?>
