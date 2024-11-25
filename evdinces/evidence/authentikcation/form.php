@@ -4,7 +4,7 @@ if(!isset($_SESSION['ismail'])){
     header("location:login.php");
 }
 if(isset($_POST["btnsubmit"])){
-    header("location:logout.php");
+    header("location:another.php");
 }
 ?>
 
@@ -40,6 +40,24 @@ form label {
 
 
 form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+form input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 5px 0 15px;
@@ -88,19 +106,19 @@ form input[type="submit"]:hover {
         <input type="text" name="nametxt" >
         <br>
         <strong>Email:</strong> <br>
-        <input type="number" name="idtxt">
+        <input type="email" name="idtxt">
         <br>
         <strong>Password:</strong> <br>
-        <input type="text" name="nametxt" >
+        <input type="password" name="nametxt" >
         <br>
         <strong>Address:</strong> <br>
-        <input type="number" name="idtxt">
+        <input type="text" name="idtxt">
         <br>
         <strong>Number:</strong> <br>
-        <input type="text" name="nametxt" >
+        <input type="number" name="nametxt" >
         <br>
         <strong>Round:</strong> <br>
-        <input type="number" name="idtxt">
+        <input type="text" name="idtxt">
         <br>
         <strong>Skill:</strong> <br>
         <input type="text" name="nametxt" >
