@@ -43,6 +43,7 @@ if(isset($_POST["btnsubmit"])){
     #submit{
         background-color: green;
         color: white;
+        
     }
 </style>
 <body>
