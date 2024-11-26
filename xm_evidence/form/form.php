@@ -4,7 +4,9 @@ if(isset($_POST["btnsubmit"])){
     $id=$_POST["txtid"];
     $name=$_POST["txtname"];
     $batch=$_POST["txtbatch"];
-    
+
+    $obj = new Student($id,$name,$batch);
+    $obj->save_data();
 }
 ?>
 
@@ -61,5 +63,9 @@ if(isset($_POST["btnsubmit"])){
            <input id="submit" type="submit" name="btnsubmit" value="Submit">
         </form>
     </section>
+
+    <?php
+    Student::display_process();
+    ?>
 </body>
 </html>
