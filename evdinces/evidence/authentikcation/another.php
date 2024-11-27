@@ -1,4 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['ismail'])){
+    header("location:login.php");
+}
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -3,9 +3,7 @@ session_start();
 if(!isset($_SESSION['ismail'])){
     header("location:login.php");
 }
-if(isset($_POST["btnsubmit"])){
-    header("location:another.php");
-}
+
 ?>
 
 
@@ -77,7 +75,7 @@ form input[type="number"] {
 }
 
 
-form input[type="submit"] {
+button {
     width: 100%;
     padding: 10px;
     background-color: #4CAF50;
@@ -123,8 +121,8 @@ form input[type="submit"]:hover {
         <strong>Skill:</strong> <br>
         <input type="text" name="nametxt" >
         <br>
-        <input type="submit" value="Submit" name="btnsubmit" >
-
+        
+   <button name="button" ><a href="another.php">submit</a></button>
     </form>
 </body>
 </html>
