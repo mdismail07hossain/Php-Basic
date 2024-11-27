@@ -34,7 +34,7 @@
 </style>  
 <body>  
 <section>
-    <form action="result.php" method="post">  
+    <form action="#" method="post">  
     Enter the Number:<br>  
     <input type="number" name="number" id="number">  
     <input id="num" type="submit" name="submit" value="Submit" />  

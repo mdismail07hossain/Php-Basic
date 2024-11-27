@@ -51,7 +51,7 @@
     }
 </style>
 <body>
-    <form action="#" method="post">
+    <form action="result.php" method="post">
         <div class="inputbox">
             <label for="nuber">Enter 1st NUmber:</label>
             <input type="number" name="fact_num1">
@@ -63,18 +63,6 @@
         </div>
     </form>
 
-    <?php
-    if(isset($_POST["btn"])){
-        $fact = 1;
-         echo "<div class='outpu'>This code how to find Leargest Number  </div>";
-        $num1= $_POST["fact_num1"];
-        $num2= $_POST["fact_num2"];
-        $num3= $_POST["fact_num3"];
-        $maxNumber = max($num1, $num2, $num3);
-         echo "<div class='output'>$num1, $num2 and $num3 The Largest Number is $maxNumber</div>";
-        ;
-        
-    }
-    ?>
+  
 </body>
 </html>
