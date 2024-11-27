@@ -19,16 +19,16 @@ class Student extends Students {
         $student=file(self::$data_file);
         file_put_contents(self::$data_file,$this->give_data(),FILE_APPEND);
     }
-     public static function display_process() {
+     public static function result() {
             $student = file(self::$data_file);
         
             echo "
             <table style='margin-left: 70%; padding-bottom: 10; font-size: 1.25rem; border-collapse: collapse; text-align: center;'>
                 <thead>
                     <tr>
+                        <th style='border: 1px solid black;text-align: center; padding: 8px;'>ID</th>
                         <th style='border: 1px solid black;text-align: center; padding: 8px;'>Name</th>
-                        <th style='border: 1px solid black;text-align: center; padding: 8px;'>Email</th>
-                        <th style='border: 1px solid black;text-align: center; padding: 8px;'>Password</th>
+                        <th style='border: 1px solid black;text-align: center; padding: 8px;'>Batch</th>
                     </tr>
                 </thead>
                 <tbody>";

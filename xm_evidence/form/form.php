@@ -30,6 +30,7 @@ if(isset($_POST["btnsubmit"])){
         padding: 30px 40px;
         box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
         border-radius: 10px;
+        background-color: white;
     }
     input{
         width: 100%;
@@ -43,12 +44,31 @@ if(isset($_POST["btnsubmit"])){
     #submit{
         background-color: green;
         color: white;
+        width: 100px;
+        margin-left: 37%;
         
+    }
+    tr,th{
+        background-color: blue;
+        color: white;
+    }
+    tr,td{
+       background-color: white;
+        color: black; 
+    }
+    h3{
+        text-align: center;
+        font-size: 26px;
+        color: green;
+    }
+    body{
+        background-color: grey;
     }
 </style>
 <body>
     <section>
         <form action="#" method="post">
+            <h3>Trainee Form</h3>
            <div>
              <label for="id">User_ID:</label>
             <input type="number" name="txtid">
@@ -66,7 +86,7 @@ if(isset($_POST["btnsubmit"])){
     </section>
 
     <?php
-    Student::display_process();
+    Student::result();
     ?>
 </body>
 </html>
