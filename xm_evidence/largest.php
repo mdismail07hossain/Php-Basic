@@ -45,9 +45,7 @@
             Number3: <br> 
             <input type="number" name="num3" id="num3" >
             <input id="num" type="submit" name="submit" value="submit">
-        </form>
-    </section>
-    <?php
+          <?php
    if($_POST){
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Get the input values from the form
@@ -63,5 +61,8 @@
         }
    }
     ?>
+        </form>
+    </section>
+  
 </body>
 </html>
