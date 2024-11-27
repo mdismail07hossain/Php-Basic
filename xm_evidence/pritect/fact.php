@@ -51,7 +51,7 @@
     }
 </style>
 <body>
-    <form action="#" method="post">
+    <form action="show.php" method="post">
         <div class="inputbox">
             <label for="nuber">Enter NUmber:</label>
             <input type="number" name="fact_num">
@@ -59,19 +59,6 @@
         </div>
     </form>
 
-    <?php
-    if(isset($_POST["btn"])){
-        $fact = 1;
-         echo "<div class='outpu'>This code how to find Factorial  </div>";
-        $number = $_POST["fact_num"];
-        for($i=2;$i<=$number;$i++){
-            $fact = $fact * $i;
-           
-        }
-         echo "<div class='output'>$number Factorial is $fact</div>";
-        ;
-        
-    }
-    ?>
+   
 </body>
 </html>
