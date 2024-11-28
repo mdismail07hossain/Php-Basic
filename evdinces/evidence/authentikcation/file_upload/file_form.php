@@ -3,13 +3,13 @@ if (isset($_POST["btnsubmit"])){
   $filename = $_FILES['myfile']['name'];
   $tmpfile = $_FILES['myfile']['tmp_name'];
   $img = 'image/';
-   if(!empty($filename)){ 
-    move_uploaded_file($tmpfile,$img.$filename);
-   } else { 
-    echo "please select a file";
-   }
+//    if(!empty($filename)){ 
+//     move_uploaded_file($tmpfile,$img.$filename);
+//    } else { 
+//     echo "please select a file";
+//    }
+// }
 }
- 
 ?>
 
 <body>
@@ -21,7 +21,7 @@ if (isset($_POST["btnsubmit"])){
 
 <?php
 if(isset($_POST["btnsubmit"])){ 
-	echo "<image src='$img/$filename' width='300px'>";
+	echo "<image src='$img.$filename' width='300px'>";
 }
 ?>
 </body>
