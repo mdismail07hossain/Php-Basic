@@ -5,14 +5,14 @@ if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
     
     // Define the maximum allowed file size (in bytes)
-    $maxFileSize = 2 * 1024 * 1024; // 2MB
+    $maxFileSize =  100 * 1024; // 2MB
 
     // Get the file size
     $fileSize = $file['size'];
 
     // Check if the file size is within the allowed limit
     if ($fileSize > $maxFileSize) {
-        echo "Error: The file size exceeds the maximum allowed size of 2MB.";
+        echo "Error: The file size exceeds the maximum allowed size of 100KB.";
     } else {
         // Specify the target directory to save the uploaded file
         $targetDir = "uploads/";
