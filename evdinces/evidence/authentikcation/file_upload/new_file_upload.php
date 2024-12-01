@@ -10,15 +10,15 @@ if(isset($_POST['submit'])){
 
     // check image size 
     if (!in_array($fileType, ["jpg", "png", "jpeg", "gif"])) {
-        $msg2 = "Also Sorry, only jpg, png, jpeg, or gif formats are allowed!";
+        $msg2 = "<div class='msg'>Also Sorry, only jpg, png, jpeg, or gif formats are allowed!</div>";
     }
     // check image type 
     elseif($kb<100){
         // upload file 
         move_uploaded_file($temp,$folder.$imageName);
-        echo "Successfully Uploaded!";
+        echo "<div class='msg1'>Successfully Uploaded!</div>";
     }else{
-        $msg ="Image is too large. Your image must be a maximum of 100 KB.";
+        $msg ="<div class='msg'>Image is too large. Your image must be a maximum of 100 KB.</div>";
     }
 
 }
@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
             justify-content: center;
             align-items: center;
             
-            background: linear-gradient(135deg, #2471a3 , #2e86c1 );
+            background: linear-gradient(135deg, #2471 , #2e86 );
         }
 
         /* Section Container */
@@ -99,6 +99,16 @@ if(isset($_POST['submit'])){
         button:hover {
             background-color: #000dff;
         }
+        .msg{
+            font-size: 22px;
+            font-weight: 600;
+            color: red;
+        }
+        .msg1{
+            font-size: 22px;
+            font-weight: 600;
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -122,7 +132,7 @@ $images = glob($imageFolder . "/*.{jpg,png,gif,jpeg}", GLOB_BRACE);
 
 if (count($images) > 0) {
     foreach ($images as $image) {
-        echo '<img src="' . $image . '" alt="image">';
+        echo '<img src="' . $image . '" alt="image" width="300px">';
     }
 } else {
     echo "No images have been uploaded yet.";
