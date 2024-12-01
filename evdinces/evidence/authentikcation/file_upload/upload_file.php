@@ -29,7 +29,19 @@ if (isset($_POST["submit"])) {
 
 <!DOCTYPE html>
 <html>
-
+<style>
+    form{
+        margin: 0 auto;
+        width: 300px;
+        padding: 30px 40px ;
+        border-radius: 20px;
+        background-color: gray;
+        color: white;
+        font-weight: 600;
+        font-size: 22px;
+        box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+    }
+</style>
 <body>
     <?php
     echo isset($msg1) ? $msg1 : '';
@@ -53,7 +65,7 @@ $images = glob($imgLocation . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
 
 if (count($images) > 0) {
     foreach ($images as $image) {
-        echo '<img src="' . $image . '" alt="Uploaded Image">';
+        echo '<img src="' . $image . '" alt="Uploaded Image"  width="300px">';
     }
 } else {
     echo "No images uploaded yet.";
