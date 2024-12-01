@@ -10,7 +10,12 @@ if(isset($_POST["btnsubmit"])){
         $_SESSION["ismail"]=$name;
         header("location:form.php");
     }else{
-        $message= "<div class='msg'>Your user_name and password is incorrect</div>";
+        if($name!=="Ismail"){
+            $message="<div class='msg'>Your user name is incorrect.</div>";
+        }
+        if($password!=="123"){
+            $message1="<div class='msg'>Your password  is incorrect.</div>";
+        }
         
     }
 }
@@ -69,7 +74,13 @@ if(isset($_POST["btnsubmit"])){
     <?php 
     
     echo isset($message) ? $message :"";
+    echo "<br>";
+    echo isset($message1) ? $message1 :"";
     ?>
+   
+    
+  
+    
    </section>
 </body>
 </html>
