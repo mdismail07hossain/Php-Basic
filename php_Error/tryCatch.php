@@ -8,7 +8,7 @@ if(isset($_POST["btnSum"]) ){
 function sum($a, $b) {
     try {
         if (!is_numeric($a) || !is_numeric($b)) {
-            throw new Exception("Both inputs must be numbers. <br>");
+            throw new Exception("<div style='color:red;'>Both inputs must be numbers.</div> ");
         }
         $result = $a + $b;
         echo "The sum of $a and $b is: $result <br>";
@@ -17,7 +17,7 @@ function sum($a, $b) {
         echo "Error: " . $error->getMessage() . "<br>";
     }
     finally {
-        echo "The execution of the sum function is complete.<br>";
+        // echo "<div style='color:green;'>The execution of the sum function is complete.</div><br>";
     }
 }
 
@@ -136,7 +136,7 @@ function sum($a, $b) {
         </div>
     </section>
 
-    <script>
+    <!-- <script>
         // Example of showing the error message when a validation fails
         const form = document.querySelector('form');
         const errorMessage = document.querySelector('.error-message');
@@ -151,6 +151,6 @@ function sum($a, $b) {
                 errorMessage.style.display = 'block'; // Show error message
             }
         });
-    </script>
+    </script> -->
 </body>
 </html>
