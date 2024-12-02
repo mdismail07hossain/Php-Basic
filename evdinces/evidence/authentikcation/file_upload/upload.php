@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
     
     // Define the maximum allowed file size (in bytes)
-    $maxFileSize =  100 * 1024; //100k
+    $maxFileSize =  100 * 1024; //
 
     // Get the file size
     $fileSize = $file['size'];
