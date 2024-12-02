@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         
         // Move the uploaded file to the target directory
         if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-            echo "File uploaded successfully!<br>";
+            echo "<div>File uploaded successfully!</div><br>";
 
             // Check file type to display accordingly
             $fileType = mime_content_type($targetFile); // Get the MIME type of the file
