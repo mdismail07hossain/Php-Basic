@@ -1,5 +1,5 @@
 <?php 
-// this is main destroy session 
+// main destroy session 
 session_start();
 
 unset($_SESSION["ismail"]);
