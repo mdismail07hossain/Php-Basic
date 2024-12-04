@@ -1,4 +1,5 @@
 <?php
+// mid session 
 session_start();
 if(!isset($_SESSION['ismail'])){
     header("location:login.php");
