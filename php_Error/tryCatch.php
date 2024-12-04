@@ -1,5 +1,5 @@
 <?php
-
+// how to catch error 
 if(isset($_POST["btnSum"]) ){
     $number1 = $_POST['num1'];
     $number2 = $_POST['num2'];
