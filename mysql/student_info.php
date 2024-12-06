@@ -61,11 +61,21 @@ if (isset($_GET["deleteid"])) {
             text-transform: uppercase;
             color: #333;
         }
-           a {
+           .delete{
             text-decoration: none;
             padding: 5px 10px ;
             border: 1px solid red;
             background-color: red;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.2)0px 5px 10px;
+        }
+           .update{
+            text-decoration: none;
+            padding: 5px 10px ;
+            border: 1px solid gray;
+            background-color: gray;
             color: white;
             font-weight: 600;
             border-radius: 5px;
@@ -98,7 +108,8 @@ if (isset($_GET["deleteid"])) {
                 <td>$round</td>
                 <td>$course</td>
                 <td>
-                <a href='student_info.php?deleteid=$id'>Delete</a>
+                <a class='delete' href='student_info.php?deleteid=$id'>Delete</a>
+                <a class='update' href='update_info.php?updateid=$id'>Update</a>
                 </td>
             </tr>";
         }
