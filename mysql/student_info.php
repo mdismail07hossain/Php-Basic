@@ -73,7 +73,7 @@ if (isset($_GET["deleteid"])) {
             cursor: pointer;
         }
         /* Action Buttons */
-        .delete, .update {
+        .delete, .update, .insert {
             text-decoration: none;
             padding: 8px 12px;
             font-weight: bold;
@@ -97,6 +97,13 @@ if (isset($_GET["deleteid"])) {
         .update:hover {
             background-color: #616161;
         }
+        .insert {
+            background-color: #4372b0;
+            border: 1px solid #4372b0;
+        }
+        .insert:hover {
+            background-color: #bfa0f9;
+        }
         /* Responsive Design */
        /* Responsive Design */
         @media (max-width: 1200px) {
@@ -108,7 +115,7 @@ if (isset($_GET["deleteid"])) {
             th, td {
                 padding: 12px;
             }
-            .delete, .update {
+            .delete, .update, .insert {
                 font-size: 12px;
                 padding: 6px 10px;
             }
@@ -121,7 +128,7 @@ if (isset($_GET["deleteid"])) {
                 font-size: 12px;
                 padding: 10px;
             }
-            .delete, .update {
+            .delete, .update, .insert {
                 font-size: 12px;
                 padding: 6px 10px;
             }
@@ -137,7 +144,7 @@ if (isset($_GET["deleteid"])) {
             th, td {
                 padding: 8px;
             }
-            .delete, .update {
+            .delete, .update, .insert{
                 font-size: 11px;
                 padding: 6px 8px;
             }
@@ -171,6 +178,7 @@ if (isset($_GET["deleteid"])) {
                 <td>
                     <a class='delete' href='student_info.php?deleteid=$id'>Delete</a>
                     <a class='update' href='update_info.php?updateid=$id'>Update</a>
+                    <a class='insert' href='insert_info.php'>Insert</a>
                 </td>
             </tr>";
         }
