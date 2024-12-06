@@ -87,7 +87,7 @@ if (isset($_GET["deleteid"])) {
                 <td>$round</td>
                 <td>$course</td>
                 <td>
-                <a href='stdent_info.php?deleteid=$id'>Delete</a>
+                <a href='student_info.php?deleteid=$id'>Delete</a>
                 </td>
             </tr>";
         }
