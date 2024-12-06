@@ -1,10 +1,10 @@
 <?php 
 $connt=mysqli_connect("localhost","root","","student_info");
-if (!$connt) {
-    die("Not connect".mysqli_connect_error());
-}else{
-    echo"connect suesscfuly";
-}
+// if (!$connt) {
+//     die("Not connect".mysqli_connect_error());
+// }else{
+//     echo"connect suesscfuly";
+// }
 
 if (isset($_GET["deleteid"])) {
     $delete_id = $_GET['deleteid'];
@@ -58,7 +58,18 @@ if (isset($_GET["deleteid"])) {
             margin-bottom: 10px;
             font-size: 1.2em;
             font-weight: bold;
+            text-transform: uppercase;
             color: #333;
+        }
+           a {
+            text-decoration: none;
+            padding: 5px 10px ;
+            border: 1px solid red;
+            background-color: red;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.2)0px 5px 10px;
         }
     </style>
 </head>
