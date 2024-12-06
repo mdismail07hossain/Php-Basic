@@ -50,40 +50,74 @@ if (isset($_POST["update"])) {
     <title>Update Student Info</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background: linear-gradient(135deg, #4caf50, #81c784); */
+            background-color: 	#bfa0f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4caf50;
         }
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
         }
         input[type="text"], input[type="email"], input[type="number"], select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 14px;
+            background: #f9f9f9;
+            transition: all 0.3s ease-in-out;
+        }
+        input:focus {
+            outline: none;
+            border-color: #4caf50;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
         }
         button {
-            padding: 10px 15px;
+            width: 100%;
+            padding: 12px;
+            background-color: #4caf50;
             border: none;
-            background-color: #4CAF50;
-            color: white;
+            color: #fff;
+            font-size: 16px;
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #388e3c;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
         }
     </style>
 </head>

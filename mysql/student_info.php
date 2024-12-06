@@ -22,64 +22,125 @@ if (isset($_GET["deleteid"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Info Table</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background: linear-gradient(135deg, #4CAF50, #81C784); */
+            background-color: 	#bfa0f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         table {
-            width: 100%;
+            width: 90%;
+            max-width: 1200px;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        caption {
+            padding: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
         }
         th, td {
-            padding: 12px 15px;
+            padding: 15px;
             text-align: center;
+            font-size: 14px;
         }
         th {
             background-color: #4CAF50;
             color: white;
+            font-weight: bold;
         }
-        tr:nth-child(even) {
+        td {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(even) td {
             background-color: #f2f2f2;
         }
-        tr:hover {
-            background-color: #ddd;
+        tr:hover td {
+            background-color: #e0f7fa;
+            cursor: pointer;
         }
-        tr td:first-child, tr th:first-child {
-            text-align: center;
-        }
-        tr td:last-child, tr th:last-child {
-            font-style: italic;
-        }
-        caption {
-            margin-bottom: 10px;
-            font-size: 1.2em;
+        /* Action Buttons */
+        .delete, .update {
+            text-decoration: none;
+            padding: 8px 12px;
             font-weight: bold;
-            text-transform: uppercase;
-            color: #333;
-        }
-           .delete{
-            text-decoration: none;
-            padding: 5px 10px ;
-            border: 1px solid red;
-            background-color: red;
-            color: white;
-            font-weight: 600;
+            font-size: 13px;
+            color: #fff;
             border-radius: 5px;
-            box-shadow: rgba(0, 0, 0, 0.2)0px 5px 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
-           .update{
-            text-decoration: none;
-            padding: 5px 10px ;
-            border: 1px solid gray;
-            background-color: gray;
-            color: white;
-            font-weight: 600;
-            border-radius: 5px;
-            box-shadow: rgba(0, 0, 0, 0.2)0px 5px 10px;
+        .delete {
+            background-color: #f44336;
+            border: 1px solid #f44336;
+        }
+        .delete:hover {
+            background-color: #d32f2f;
+        }
+        .update {
+            background-color: #757575;
+            border: 1px solid #757575;
+        }
+        .update:hover {
+            background-color: #616161;
+        }
+        /* Responsive Design */
+       /* Responsive Design */
+        @media (max-width: 1200px) {
+            table {
+                width: 95%;
+            }
+        }
+        @media (max-width: 992px) {
+            th, td {
+                padding: 12px;
+            }
+            .delete, .update {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+            th, td {
+                font-size: 12px;
+                padding: 10px;
+            }
+            .delete, .update {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 20px;
+            }
+            table {
+                width: 100%;
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            .delete, .update {
+                font-size: 11px;
+                padding: 6px 8px;
+            }
         }
     </style>
 </head>
@@ -108,8 +169,8 @@ if (isset($_GET["deleteid"])) {
                 <td>$round</td>
                 <td>$course</td>
                 <td>
-                <a class='delete' href='student_info.php?deleteid=$id'>Delete</a>
-                <a class='update' href='update_info.php?updateid=$id'>Update</a>
+                    <a class='delete' href='student_info.php?deleteid=$id'>Delete</a>
+                    <a class='update' href='update_info.php?updateid=$id'>Update</a>
                 </td>
             </tr>";
         }
@@ -117,3 +178,4 @@ if (isset($_GET["deleteid"])) {
     </table>
 </body>
 </html>
+
