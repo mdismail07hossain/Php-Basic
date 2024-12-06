@@ -6,6 +6,14 @@ if (!$connt) {
     echo"connect suesscfuly";
 }
 
+if (isset($_GET["deleteid"])) {
+    $delete_id = $_GET['deleteid'];
+    $del="DELETE FROM info WHERE id=$delete_id";
+    if (mysqli_query($connt, $del)==true) {
+        header("locatino:student_info.php");
+
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +73,7 @@ if (!$connt) {
             <th>Department</th>
             <th>Round</th>
             <th>Course</th>
+            <th>Action</th>
         </tr>
         <?php 
         $students = $connt->query("SELECT * FROM info");
@@ -77,6 +86,9 @@ if (!$connt) {
                 <td>$department</td>
                 <td>$round</td>
                 <td>$course</td>
+                <td>
+                <a href='stdent_info.php?deleteid=$id'>Delete</a>
+                </td>
             </tr>";
         }
         ?>
