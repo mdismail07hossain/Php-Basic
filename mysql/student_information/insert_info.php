@@ -16,7 +16,7 @@ if (isset($_POST['insert'])) {
 
     $insert_query = "INSERT INTO info (name, email, number, department, round, coursename) VALUES ('$name', '$email', '$number', '$department', '$round', '$course')";
 
-    if (mysqli_query($connt, $insert_query)) {
+    if (mysqli_query($connt, $insert_query)==true) {
         header("Location: student_info.php"); // Redirect after insert
         exit();
     } else {
