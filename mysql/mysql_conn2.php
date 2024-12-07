@@ -1,19 +1,20 @@
 <?php  
 $conn=mysqli_connect("localhost","root","","company_database");
-if(!$conn){
-    die("Connections fialed");
-}else{
-    echo"<b style='color:green;'>Connections Successful</b>";
-}
+// if(!$conn){
+//     die("Connections fialed");
+// }else{
+//     echo"<b style='color:green;'>Connections Successful</b>";
+// }
 
-if(isset($_GET['deleteid'])){
-    $delete_id= $_GET['deleteid'];
-    $sql="DELETE FROM user WHERE id=$delete_id";
+
+if(isset($_GET['delete'])){
+    $delete_id= $_GET['delete'];
+    print_r($delete_id) ;
+    $sql="DELETE FROM employees_info WHERE id=$delete_id";
     if(mysqli_query($conn,$sql)== true){
-        header("location:mysql_conn.php");
+        header("location:mysql_conn2.php");
 }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,23 +75,27 @@ if(isset($_GET['deleteid'])){
 </head>
 <body>
     <table>
-        <caption>User Information</caption>
+        <caption>Empolyees Information</caption>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Number</th>
+            <th>Address</th>
             <th>Action</th>
         </tr>
         <?php 
-            $users = $conn->query("SELECT * FROM user");
-            while(list($id, $name, $email) = $users->fetch_row()){
+            $employees = $conn->query("SELECT * FROM  employees_info");
+            while(list($id, $name, $email, $phone, $address) = $employees->fetch_row()){
                 echo "
                     <tr> 
                         <td>$id</td>
                         <td>$name</td>
                         <td>$email</td>
-                        <td>
-                        <a href='mysql_conn.php?deleteid=$id'>Delete</a>
+                        <td>$phone</td>
+                        <td>$address</td>
+                         <td>
+                        <a href='mysql_conn2.php?delete=$id'>Delete</a>
                         </td>
                     </tr>";
             }
