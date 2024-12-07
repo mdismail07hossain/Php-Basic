@@ -101,8 +101,8 @@ if (isset($_GET["deleteid"])) {
             display: block;
             position: absolute;
             top: 20px;
-            right: 50px;
-            left: 90%;
+            right: 152px;
+            /* left: 90%; */
             /* bottom: 10px; */
             /* margin-left: 10px; */
            text-decoration: none;
@@ -120,7 +120,8 @@ if (isset($_GET["deleteid"])) {
             border: 1px solid #4372b0;
         }
         .insert:hover {
-            background-color: #4372b0;
+            background-color: skyblue;
+            border: 1px solid skyblue;
         }
         /* Responsive Design */
        /* Responsive Design */
