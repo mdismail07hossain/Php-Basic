@@ -178,10 +178,11 @@ if (isset($_GET["deleteid"])) {
                 <td>
                     <a class='delete' href='student_info.php?deleteid=$id'>Delete</a>
                     <a class='update' href='update_info.php?updateid=$id'>Update</a>
-                    <a class='insert' href='insert_info.php'>Insert</a>
+                    
                 </td>
             </tr>";
         }
+        // <a class='insert' href='insert_info.php'>Insert</a>
         ?>
     </table>
 </body>
