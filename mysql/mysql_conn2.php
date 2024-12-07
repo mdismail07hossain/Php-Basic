@@ -1,19 +1,24 @@
 <?php  
-$conn=mysqli_connect("localhost","root","","company_database");
-// if(!$conn){
-//     die("Connections fialed");
-// }else{
-//     echo"<b style='color:green;'>Connections Successful</b>";
-// }
+$conn = mysqli_connect("localhost", "root", "", "company_database");
 
+if (isset($_GET['delete'])) {
+    $delete_id = $_GET['delete'];
 
-if(isset($_GET['delete'])){
-    $delete_id= $_GET['delete'];
-    print_r($delete_id) ;
-    $sql="DELETE FROM employees_info WHERE id=$delete_id";
-    if(mysqli_query($conn,$sql)== true){
-        header("location:mysql_conn2.php");
-}
+    // Delete the employee record
+    $sql = "DELETE FROM employees_info WHERE id=$delete_id";
+    if (mysqli_query($conn, $sql)) {
+        // Reset the auto-increment value to the highest current ID to keep sequence clean
+        $resetAutoIncrement = "ALTER TABLE employees_info AUTO_INCREMENT = 1";
+        mysqli_query($conn, $resetAutoIncrement);
+
+        // Optionally, if you want to reset the IDs to maintain a clean sequence from 1, 
+        // you can do this by selecting the last max ID, then resetting the auto-increment.
+        // $resetAutoIncrement = "ALTER TABLE employees_info AUTO_INCREMENT = (SELECT MAX(id) FROM employees_info) + 1";
+        
+        // Redirect to refresh the page after deletion
+        header("Location: mysql_conn2.php");
+        exit();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -63,19 +68,28 @@ if(isset($_GET['delete'])){
             padding: 10px;
             color: #333;
         }
-        a {
+
+        .delete{
             text-decoration: none;
-            padding: 5px 10px ;
+            padding: 5px 10px;
             border: 1px solid red;
             background-color: red;
             color: white;
             font-weight: 600;
         }
+        .edit{
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid gray;
+            background-color: gray;
+            color: white;
+            font-weight: 600;  
+        }
     </style>
 </head>
 <body>
     <table>
-        <caption>Empolyees Information</caption>
+        <caption>Employees Information</caption>
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -85,17 +99,25 @@ if(isset($_GET['delete'])){
             <th>Action</th>
         </tr>
         <?php 
-            $employees = $conn->query("SELECT * FROM  employees_info");
-            while(list($id, $name, $email, $phone, $address) = $employees->fetch_row()){
+            $employees = $conn->query("SELECT * FROM employees_info");
+            $counter = 1; // Start counter from 1 for sequential IDs
+            while ($row = $employees->fetch_assoc()) {
+                $id = $counter++; // Use the counter for IDs
+                $name = $row['name'];
+                $email = $row['email'];
+                $phone = $row['number'];
+                $address = $row['address'];
+
                 echo "
-                    <tr> 
+                    <tr>
                         <td>$id</td>
                         <td>$name</td>
                         <td>$email</td>
                         <td>$phone</td>
                         <td>$address</td>
-                         <td>
-                        <a href='mysql_conn2.php?delete=$id'>Delete</a>
+                        <td>
+                            <a class='delete' href='mysql_conn2.php?delete={$row['id']}'>Delete</a>
+                            <a class='edit' href='edit_info.php?edit={$row['id']}'>Edit</a>
                         </td>
                     </tr>";
             }
