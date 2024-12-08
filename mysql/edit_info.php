@@ -1,4 +1,4 @@
 <?php
-$connt=mysqli_connect("localhost","root","","company_database");
+$connt=mysqli_connect("localhost","root","","student_info");
  
  ?>
