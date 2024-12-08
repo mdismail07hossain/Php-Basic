@@ -1,34 +1,39 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "pos_system");
 
-// Fetch products
 $products = $conn->query("SELECT * FROM products");
 
-// Process Order
 if (isset($_POST['process_order'])) {
     $cart = $_POST['cart'];
-    $totalAmount = 0;
+    $discount = $_POST['discount'];
+    $taxRate = $_POST['tax'];
+    $total = 0;
 
-    // Insert order into orders table
-    $conn->query("INSERT INTO orders (total_amount) VALUES (0)");
+    $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES (0, 0, 0, 0)");
     $orderId = $conn->insert_id;
 
     foreach ($cart as $productId => $quantity) {
-        $product = $conn->query("SELECT * FROM products WHERE id = $productId")->fetch_assoc();
-        $subtotal = $product['price'] * $quantity;
-        $totalAmount += $subtotal;
+        if ($quantity > 0) {
+            $product = $conn->query("SELECT * FROM products WHERE id=$productId")->fetch_assoc();
+            $subtotal = $product['price'] * $quantity;
+            $total += $subtotal;
 
-        // Insert order items
-        $conn->query("INSERT INTO order_items (order_id, product_id, quantity, subtotal) VALUES ($orderId, $productId, $quantity, $subtotal)");
-
-        // Update product stock
-        $conn->query("UPDATE products SET stock = stock - $quantity WHERE id = $productId");
+            $conn->query("INSERT INTO order_items (order_id, product_id, quantity, subtotal) VALUES ($orderId, $productId, $quantity, $subtotal)");
+            $conn->query("UPDATE products SET stock = stock - $quantity WHERE id=$productId");
+        }
     }
 
-    // Update total amount in orders table
-    $conn->query("UPDATE orders SET total_amount = $totalAmount WHERE id = $orderId");
+    $discountAmount = ($total * $discount) / 100;
+    $tax = (($total - $discountAmount) * $taxRate) / 100;
+    $netTotal = $total - $discountAmount + $tax;
 
-    echo "<p>Order processed successfully! Order ID: $orderId</p>";
+    $conn->query("UPDATE orders SET total_amount=$total, discount=$discountAmount, tax=$tax, net_total=$netTotal WHERE id=$orderId");
+
+    echo "<h3>Order Processed Successfully! Receipt:</h3>";
+    echo "<p>Total: $$total</p>";
+    echo "<p>Discount: $$discountAmount</p>";
+    echo "<p>Tax: $$tax</p>";
+    echo "<p>Net Total: $$netTotal</p>";
 }
 ?>
 
@@ -37,61 +42,29 @@ if (isset($_POST['process_order'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POS System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f9;
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .cart-input {
-            width: 50px;
-        }
-    </style>
+    <title>POS</title>
 </head>
 <body>
-    <h2>POS System</h2>
+    <h2>Point of Sale</h2>
     <form method="POST">
-        <table>
+        <table border="1">
             <tr>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Stock</th>
                 <th>Quantity</th>
             </tr>
-            <?php while ($row = $products->fetch_assoc()): ?>
+            <?php while ($product = $products->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $row['name']; ?></td>
-                <td><?php echo $row['price']; ?></td>
-                <td><?php echo $row['stock']; ?></td>
-                <td>
-                    <input type="number" name="cart[<?php echo $row['id']; ?>]" class="cart-input" min="0" max="<?php echo $row['stock']; ?>" value="0">
-                </td>
+                <td><?php echo $product['name']; ?></td>
+                <td><?php echo $product['price']; ?></td>
+                <td><?php echo $product['stock']; ?></td>
+                <td><input type="number" name="cart[<?php echo $product['id']; ?>]" min="0" max="<?php echo $product['stock']; ?>"></td>
             </tr>
             <?php endwhile; ?>
         </table>
+        <label>Discount (%): <input type="number" name="discount" value="0"></label>
+        <label>Tax Rate (%): <input type="number" name="tax" value="0"></label>
         <button type="submit" name="process_order">Process Order</button>
     </form>
 </body>
