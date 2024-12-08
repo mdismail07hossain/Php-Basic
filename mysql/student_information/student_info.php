@@ -1,10 +1,6 @@
 <?php 
 $connt=mysqli_connect("localhost","root","","student_info");
-// if (!$connt) {
-//     die("Not connect".mysqli_connect_error());
-// }else{
-//     echo"connect suesscfuly";
-// }
+
 
 if (isset($_GET["deleteid"])) {
     $delete_id = $_GET['deleteid'];
