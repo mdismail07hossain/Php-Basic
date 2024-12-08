@@ -1,5 +1,5 @@
 <?php  
-$conn = mysqli_connect("localhost", "root", "", "company_database");
+$conn = mysqli_connect("localhost", "root", "", "student_info");
 
 if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];

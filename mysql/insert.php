@@ -94,7 +94,7 @@
 
     <?php
     // require_once("connt.php");
-    $conn=mysqli_connect("localhost","root","","company_database");
+    $conn=mysqli_connect("localhost","root","","student_info");
 // if(!$conn){
 //     die("Connections fialed");
 // }else{
