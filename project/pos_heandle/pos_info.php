@@ -9,7 +9,8 @@ if (isset($_POST['process_order'])) {
     $taxRate = $_POST['tax'];
     $total = 0;
 
-    $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES (0, 0, 0, 0)");
+$conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES (0, 0, 0, 0)");
+
     $orderId = $conn->insert_id;
 
     foreach ($cart as $productId => $quantity) {
