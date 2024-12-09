@@ -119,7 +119,7 @@ if (isset($_GET["deleteid"])) {
             background-color: skyblue;
             border: 1px solid skyblue;
         }
-        /* Responsive Design */
+       
        /* Responsive Design */
         @media (max-width: 1200px) {
             table {
