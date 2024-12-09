@@ -98,7 +98,7 @@ if (isset($_GET["deleteid"])) {
             position: absolute;
             top: 20px;
             right: 152px;
-            /* left: 90%; */
+           
             
           
            text-decoration: none;
