@@ -100,7 +100,7 @@ if (isset($_GET["deleteid"])) {
             right: 152px;
             /* left: 90%; */
             
-            /* margin-left: 10px; */
+          
            text-decoration: none;
             padding: 8px 15px;
             font-weight: bold;
