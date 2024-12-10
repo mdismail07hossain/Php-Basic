@@ -7,7 +7,7 @@ if(isset($_POST["subbtn"])){
     $name=$_POST['name'];
     $email=$_POST['email'];
     $number=$_POST['number'];
-
+    // insert query create here 
     $connt->query("call call_users('$name','$email','$number')");
 }
 ?>
