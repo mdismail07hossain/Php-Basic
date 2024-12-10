@@ -10,7 +10,7 @@ if(isset($_POST["subbtn"])){
     $connt->query("call call_users('$name','$email','$number')");
 }
 ?>
-<!-- form part start  -->
+<!----------------------- form part start  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
