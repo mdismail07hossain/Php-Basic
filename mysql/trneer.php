@@ -1,4 +1,5 @@
 <?php  
+// connection with Database
 $connt=mysqli_connect("localhost","root","","trianeere_info");
 
 if(isset($_POST["subbtn"])){
