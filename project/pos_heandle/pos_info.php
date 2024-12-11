@@ -44,11 +44,84 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        input[type="number"] {
+            width: 70px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <h2>Point of Sale</h2>
     <form method="POST">
-        <table border="1">
+        <table>
             <tr>
                 <th>Product</th>
                 <th>Price</th>
@@ -57,15 +130,15 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
             </tr>
             <?php while ($product = $products->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $product['name']; ?></td>
-                <td><?php echo $product['price']; ?></td>
+                <td><?php echo htmlspecialchars($product['name']); ?></td>
+                <td>$<?php echo number_format($product['price'], 2); ?></td>
                 <td><?php echo $product['stock']; ?></td>
                 <td><input type="number" name="cart[<?php echo $product['id']; ?>]" min="0" max="<?php echo $product['stock']; ?>"></td>
             </tr>
             <?php endwhile; ?>
         </table>
-        <label>Discount (%): <input type="number" name="discount" value="0"></label>
-        <label>Tax Rate (%): <input type="number" name="tax" value="0"></label>
+        <label>Discount (%): <input type="number" name="discount" value="0" min="0" max="100"></label>
+        <label>Tax Rate (%): <input type="number" name="tax" value="0" min="0" max="100"></label>
         <button type="submit" name="process_order">Process Order</button>
     </form>
 </body>
