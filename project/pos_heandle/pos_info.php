@@ -9,7 +9,7 @@ if (isset($_POST['process_order'])) {
     $taxRate = $_POST['tax'];
     $total = 0;
 
-$conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES (0, 0, 0, 0)");
+    $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES (0, 0, 0, 0)");
 
     $orderId = $conn->insert_id;
 
@@ -31,10 +31,13 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
     $conn->query("UPDATE orders SET total_amount=$total, discount=$discountAmount, tax=$tax, net_total=$netTotal WHERE id=$orderId");
 
     echo "<h3>Order Processed Successfully! Receipt:</h3>";
-    echo "<p>Total: $$total</p>";
-    echo "<p>Discount: $$discountAmount</p>";
-    echo "<p>Tax: $$tax</p>";
-    echo "<p>Net Total: $$netTotal</p>";
+    echo "<table class='receipt'>
+            <tr><th>Description</th><th>Amount</th></tr>
+            <tr><td>Total</td><td>$" . number_format($total, 2) . "</td></tr>
+            <tr><td>Discount</td><td>$" . number_format($discountAmount, 2) . "</td></tr>
+            <tr><td>Tax</td><td>$" . number_format($tax, 2) . "</td></tr>
+            <tr><td><strong>Net Total</strong></td><td><strong>$" . number_format($netTotal, 2) . "</strong></td></tr>
+          </table>";
 }
 ?>
 
@@ -48,11 +51,11 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
+            background-color: #f4f4f9;
             color: #333;
         }
 
-        h2 {
+        h2, h3 {
             text-align: center;
             color: #4CAF50;
         }
@@ -66,7 +69,7 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
         }
 
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
             border: 1px solid #ddd;
         }
@@ -101,6 +104,8 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
             cursor: pointer;
             border-radius: 4px;
             font-size: 16px;
+            display: block;
+            margin: 20px auto;
         }
 
         button:hover {
@@ -115,6 +120,28 @@ $conn->query("INSERT INTO orders (total_amount, discount, tax, net_total) VALUES
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .receipt {
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .receipt th {
+            background-color: #333;
+            color: white;
+            text-align: left;
+        }
+
+        .receipt td {
+            text-align: right;
+        }
+
+        .receipt tr:last-child td {
+            font-weight: bold;
+            color: #4CAF50;
         }
     </style>
 </head>
