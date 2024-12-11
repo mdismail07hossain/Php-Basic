@@ -17,10 +17,73 @@ function getOrderDetails($conn, $orderId) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .details {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .details p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <h2>Order History</h2>
-    <table border="1">
+    <table>
         <tr>
             <th>Order ID</th>
             <th>Date</th>
@@ -34,17 +97,17 @@ function getOrderDetails($conn, $orderId) {
         <tr>
             <td><?php echo $order['id']; ?></td>
             <td><?php echo $order['order_date']; ?></td>
-            <td><?php echo $order['total_amount']; ?></td>
-            <td><?php echo $order['discount']; ?></td>
-            <td><?php echo $order['tax']; ?></td>
-            <td><?php echo $order['net_total']; ?></td>
+            <td>$<?php echo number_format($order['total_amount'], 2); ?></td>
+            <td>$<?php echo number_format($order['discount'], 2); ?></td>
+            <td>$<?php echo number_format($order['tax'], 2); ?></td>
+            <td>$<?php echo number_format($order['net_total'], 2); ?></td>
             <td>
                 <button onclick="toggleDetails(<?php echo $order['id']; ?>)">View Details</button>
-                <div id="details-<?php echo $order['id']; ?>" style="display:none;">
+                <div id="details-<?php echo $order['id']; ?>" class="details">
                     <?php 
                     $details = getOrderDetails($conn, $order['id']);
                     while ($detail = $details->fetch_assoc()): ?>
-                    <p><?php echo $detail['name']; ?> (x<?php echo $detail['quantity']; ?>): $<?php echo $detail['subtotal']; ?></p>
+                    <p><?php echo $detail['name']; ?> (x<?php echo $detail['quantity']; ?>): $<?php echo number_format($detail['subtotal'], 2); ?></p>
                     <?php endwhile; ?>
                 </div>
             </td>
