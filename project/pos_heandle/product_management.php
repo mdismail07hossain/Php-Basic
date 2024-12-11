@@ -154,6 +154,7 @@ $products = $conn->query("SELECT * FROM products");
                 <td class="actions">
                     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
                     <button type="submit" name="edit_product">Edit</button>
+                   
                     <a href="product_management.php?delete=<?php echo $product['id']; ?>">Delete</a>
                 </td>
             </form>
