@@ -19,10 +19,10 @@ if(isset($_POST["subbtn"])){
 <body>
     <h2>Product Form</h2>
     <form action="#" method="POST">
-        <label for="name">Name:</label><br>
+        <label for="name">Product_Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
 
-        <label for="number">Phone Number:</label><br>
+        <label for="number">product_brand:</label><br>
         <input type="tel" id="number" name="number" required><br><br>
         <input type="submit" value="Submit" name="subbtn">
     </form>
