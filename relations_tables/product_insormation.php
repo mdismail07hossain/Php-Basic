@@ -14,7 +14,7 @@ if(isset($_POST["subbtn"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Product Form</title>
 </head>
 <body>
     <h2>Product Form</h2>
