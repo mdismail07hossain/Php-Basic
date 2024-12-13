@@ -1,4 +1,5 @@
 <?php
+// make a class name customer 
 class Customer{
     public $cusId;
     public $name;
