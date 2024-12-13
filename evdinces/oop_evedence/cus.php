@@ -15,7 +15,7 @@ class Customer{
         return $this->cusId . ",".$this->name. PHP_EOL;
     }
     public function save_data(){
-        
+        // this method to how file save 
        file_put_contents(self::$cus_data, $this->cusdata(), FILE_APPEND);
     }
     public static function cus_all() {
