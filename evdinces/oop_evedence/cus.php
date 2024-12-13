@@ -1,6 +1,7 @@
 <?php
 // make a class name customer 
 class Customer{
+    // declear two proparties
     public $cusId;
     public $name;
 
