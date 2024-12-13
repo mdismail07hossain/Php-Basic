@@ -20,7 +20,7 @@ class Customer{
     }
     public static function cus_all() {
             $customer = file(self::$cus_data);
-        
+        // main method 
             echo "
             <table style='margin-left: 50%; padding-bottom: 10; font-size: 1.25rem; border-collapse: collapse;'>
                 <thead>
