@@ -75,7 +75,7 @@
     <div class="form-container">
         <h2>Product Form</h2>
         <form action="" method="POST">
-            <label for="name">Name:</label>
+            <label for="name">Product Name:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="number">Product Price:</label>
