@@ -51,10 +51,15 @@ if(isset($_POST["btnsubmit"])){
     }
     input{
         width: 100%;
-        border: 2px solid black;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: rgba(67, 64, 233, 0.35)0px 5px 15px;
+        /* padding: 10px; */
+        /* border: 2px solid black; */
+        border: none;
         outline: none;
-        padding: 5px;
-        margin-bottom:10px ;
+        padding: 10px;
+        /* margin-bottom:10px ; */
     }
     button{
         box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
@@ -74,6 +79,7 @@ if(isset($_POST["btnsubmit"])){
         font-size: 18px;
         font-weight: 600;
         color: red;
+        margin-bottom: 10px;
     }
 </style>
 <body>
