@@ -22,14 +22,14 @@ if (isset($_POST["submit"])) {
 
     if (($kb > 100) || !in_array($fileType, ["jpg","png","jpeg","gif"])) {
         if ($kb > 100) {
-            $msg1 = "Image is too large. Your image must be a maximum of 100 KB.";
+            $msg1 = "<div class='msg'>Image is too large. Your image must be a maximum of 100 KB.</div>";
         }
         if (!in_array($fileType, ["jpg","png","jpeg","gif"])) {
-            $msg2 = "Also Sorry, only jpg, png, jpeg, or gif formats are allowed!";
+            $msg2 = "<div class='msg'>Also Sorry, only jpg, png, jpeg, or gif formats are allowed!</div>";
         }
     } else {
         move_uploaded_file($temp, $imgLocaton . $fileName);
-        echo "Successfully Uploaded!";
+        echo "<div style='color:green;font-weight: 600;'>Uploaded Successfuly</div>";
     }
 
 
@@ -56,6 +56,13 @@ if (isset($_POST["submit"])) {
         font-size: 22px;
         box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
        
+    }
+     .msg {
+        text-align: left;
+        font-size: 18px;
+        font-weight: 600;
+        color: red;
+        margin-bottom: 10px;
     }
     button {
         background:linear-gradient(to left,red,orange) ;
@@ -114,15 +121,16 @@ if (isset($_POST["submit"])) {
     }
 </style>
 <body>
-    <?php
-    echo isset($msg1) ? $msg1 : '';
-    echo "<br>";
-    echo isset($msg2) ? $msg2 : '';
-    ?>
+
     <form action="" method="post" enctype="multipart/form-data" style="margin-top:15px;">
         Select image to upload:
         <input type="file" name="fileToUpload" id="fileToUpload"><br>
         <input type="submit" value="Upload Image" name="submit" id="upload"><br>
+         <?php
+    echo isset($msg1) ? $msg1 : '';
+    echo "<br>";
+    echo isset($msg2) ? $msg2 : '';
+    ?>
         <button name="button" ><a href="logout.php">LogOut</a></button>
     </form>
     <section class="php_img">
