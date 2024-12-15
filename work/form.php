@@ -42,6 +42,9 @@ if (isset($_POST["submit"])) {
 <!DOCTYPE html>
 <html>
 <style>
+    body{
+        background-color: gray;
+    }
     form{
         margin: 0 auto;
         width: 300px;
