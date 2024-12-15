@@ -124,13 +124,15 @@ if (isset($_POST["submit"])) {
 
     <form action="" method="post" enctype="multipart/form-data" style="margin-top:15px;">
         Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload"><br>
-        <input type="submit" value="Upload Image" name="submit" id="upload"><br>
-         <?php
+        <input type="file" name="fileToUpload" id="fileToUpload">
+           <?php
     echo isset($msg1) ? $msg1 : '';
     echo "<br>";
     echo isset($msg2) ? $msg2 : '';
     ?>
+    <br>
+        <input type="submit" value="Upload Image" name="submit" id="upload"><br>
+      
         <button name="button" ><a href="logout.php">LogOut</a></button>
     </form>
     <section class="php_img">
