@@ -50,7 +50,7 @@ if(isset($_POST["btnsubmit"])){
     }
     input{
         width: 100%;
-        border: 2px solid greenyellow;
+        border: 2px solid black;
         outline: none;
         padding: 5px;
         margin-bottom:10px ;
