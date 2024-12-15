@@ -6,7 +6,7 @@ if(isset($_POST["subbtn"])){
     // $email=$_POST['email'];
     $number=$_POST['number'];
     // insert query create here 
-    $connt->query("call brand_name('$name','$number')");
+    $connt->query("call brand_info('$name','$number')");
 }
 ?>
 <!DOCTYPE html>
@@ -92,7 +92,7 @@ if(isset($_POST["subbtn"])){
             <label for="name">Product Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter product name" required>
 
-            <label for="number">Product Brand:</label>
+            <label for="number">Product Contact:</label>
             <input type="tel" id="number" name="number" placeholder="Enter product brand" required>
 
             <input type="submit" value="Submit" name="subbtn">

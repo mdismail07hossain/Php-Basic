@@ -76,7 +76,7 @@
         </tr>
         <?php
         $connt = mysqli_connect("localhost", "root", "", "trianeere_info");
-        $dis = $connt->query("SELECT * FROM product_display");
+        $dis = $connt->query("SELECT * FROM display");
         $count = 1;
         while (list($name, $contact, $pname, $price) = $dis->fetch_row()) {
             $count++;

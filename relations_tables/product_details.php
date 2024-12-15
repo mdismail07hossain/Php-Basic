@@ -98,7 +98,7 @@ if(isset($_POST["subbtn"])){
                 <?php
                 $bds = mysqli_connect("localhost", "root", "", "trianeere_info");
                 if ($bds) {
-                    $manu = $bds->query("SELECT * FROM brand_information");
+                    $manu = $bds->query("SELECT * FROM brand");
                     while (list($id, $name) = $manu->fetch_row()) {
                         echo "<option value='$id'>$name</option>";
                     }
@@ -109,6 +109,31 @@ if(isset($_POST["subbtn"])){
             </select>
 
             <input type="submit" value="Submit" name="subbtn">
+        </form>
+        <h2>Delete_Product Form</h2>
+        <form action="" method="POST">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="number">Product Price:</label>
+            <input type="text" id="number" name="number" required>
+
+            <label for="manufc">Product Brand:</label>
+            <select name="manufc" id="manufc" required>
+                <?php
+                $bds = mysqli_connect("localhost", "root", "", "trianeere_info");
+                if ($bds) {
+                    $manu = $bds->query("SELECT * FROM brand");
+                    while (list($id, $name) = $manu->fetch_row()) {
+                        echo "<option value='$id'>$name</option>";
+                    }
+                } else {
+                    echo "<option value=''>Unable to load brands</option>";
+                }
+                ?>
+            </select>
+
+            <input type="submit" value="Delete" name="subbtn">
         </form>
     </div>
 </body>
