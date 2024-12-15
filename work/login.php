@@ -43,7 +43,8 @@ if(isset($_POST["btnsubmit"])){
     form{
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
-        color: gray;
+        color: black;
+        font-weight: 600;
         border-radius: 10px;
         padding: 30px 40px;
         
@@ -60,6 +61,7 @@ if(isset($_POST["btnsubmit"])){
         padding: 7px 10px;
         background-color: green;
         color: white;
+        font-weight: 600;
         border-radius: 5px;
     }
     section{
