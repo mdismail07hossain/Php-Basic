@@ -57,8 +57,8 @@ if(isset($_POST["btnsubmit"])){
     }
     button{
         padding: 7px 10px;
-        background-color: greenyellow;
-        color: red;
+        background-color: green;
+        color: white;
         border-radius: 5px;
     }
     section{
