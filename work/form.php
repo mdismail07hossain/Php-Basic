@@ -207,16 +207,4 @@ if (count($images) > 0) {
 </body>
 
 </html>
-<html>  
-<head>  
-<title>Factorial Program using loop in PHP</title>  
-</head>
-<style>
-     
-</style>  
-<body>  
-
-    
-</body>  
-</html>  
 <!-- html part end  -->
