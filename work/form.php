@@ -126,6 +126,7 @@ if (isset($_POST["submit"])) {
 
     <form action="" method="post" enctype="multipart/form-data" style="margin-top:15px;">
         Select image to upload:
+        <br><br>
         <input type="file" name="fileToUpload" id="fileToUpload">
            <?php
     echo isset($msg1) ? $msg1 : '';
