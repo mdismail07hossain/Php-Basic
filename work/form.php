@@ -41,6 +41,7 @@ if (isset($_POST["submit"])) {
 
 <!DOCTYPE html>
 <html>
+    <!-- design part css start  -->
 <style>
     body{
         background-color: gray;
