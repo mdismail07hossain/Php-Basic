@@ -118,7 +118,7 @@ if (isset($_POST["submit"])) {
         font-weight:600 ;
         box-shadow: rgba(0, 0, 0, 0.70)5px 10px 15px;
          cursor: pointer;
-        /* margin-left: 200px;  */
+       
     }
 </style>
 <body>
