@@ -120,6 +120,7 @@ if (isset($_POST["submit"])) {
          cursor: pointer;
        
     }
+    /* design part css end  */
 </style>
 <body>
 
