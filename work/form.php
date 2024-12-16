@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
         width: 300px;
         padding: 30px 40px ;
         border-radius: 20px;
-        background-color: gray;
+        background-color: white;
         color: white;
         font-weight: 600;
         font-size: 22px;
