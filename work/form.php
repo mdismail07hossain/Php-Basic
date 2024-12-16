@@ -153,7 +153,7 @@ if (isset($_POST["submit"])) {
 </style>
 <body>
 
-    <form class="form" action="" method="post" enctype="multipart/form-data" style="margin-top:15px;">
+    <form  action="" method="post" enctype="multipart/form-data" style="margin-top:15px;">
         Select image to upload:
         <br><br>
         <input type="file" name="fileToUpload" id="fileToUpload">
@@ -168,7 +168,7 @@ if (isset($_POST["submit"])) {
         <button name="button" ><a href="logout.php">LogOut</a></button>
     </form>
     <section>
-    <form action="#" method="post">  
+    <form class="form" action="#" method="post">  
     Enter the Number:<br>  
     <input type="number" name="number" id="number">  
     <input id="num" type="submit" name="submit" value="Submit" />  
