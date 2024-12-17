@@ -140,27 +140,7 @@ if (isset($_POST["submit"])) {
       
         <button name="button" ><a href="logout.php">LogOut</a></button>
     </form>
-    <section>
-    <form class="form" action="#" method="post">  
-    Enter the Number:<br>  
-    <input type="number" name="number" id="number">  
-    <input id="num" type="submit" name="submit" value="Submit" />  
-<?php   
-    if($_POST){  
-        $fact = 1;  
-        //getting value from input text box 'number'  
-        $number = $_POST['number'];  
-        echo "<h3 style='text-align: center;'>Factorial of $number:</h3>
-        ";  
-        //start loop  
-        for ($i = 1; $i <= $number; $i++){         
-            $fact = $fact * $i;  
-            }  
-            echo "<h3 style='text-align: center;'> $fact . </h3>";  
-    }  
-?> 
-</form> 
-</section> 
+  
     <section class="php_img">
 <?php
 // Display all uploaded images from the "uploads" directory
