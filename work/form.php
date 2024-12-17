@@ -107,48 +107,6 @@ if (isset($_POST["submit"])) {
         transition: .5s;
 
     }
-    #upload{
-       background:linear-gradient(to left,blue,skyblue) ;
-        padding: 7px 12px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        margin-top: 10px;
-        color: white;
-        font-weight:600 ;
-        box-shadow: rgba(0, 0, 0, 0.70)5px 10px 15px;
-         cursor: pointer;
-       
-    }
-     #num {
-        padding: 7px 10px ;
-        border-radius: 5px;
-        outline:none;
-        background-color:green;
-        color:white;
-        border:none;
-        box-shadow:rgba(0,0,0,0.35)0px 5px 15px;
-
-    }
-    input{
-        padding: 7px 10px ;
-        display:block;
-        margin-bottom:10px ;
-        border-radius: 5px;
-    }
-    section{
-        margin: 0 auto;
-        width: 300px;
-    }
-    .form{
-        background-color:grey;
-        padding: 30px 40px;
-        color:white;
-        border:none;
-        border-radius: 5px;
-        box-shadow:rgba(0,0,0,0.35)0px 5px 15px;
-        
-    }
     /* design part css end  */
 </style>
 <body>
