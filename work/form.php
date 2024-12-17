@@ -107,6 +107,21 @@ if (isset($_POST["submit"])) {
         transition: .5s;
 
     }
+    #upload{
+       background:linear-gradient(to left,blue,skyblue) ;
+        padding: 7px 12px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        color: white;
+        font-weight:600 ;
+        box-shadow: rgba(0, 0, 0, 0.70)5px 10px 15px;
+         cursor: pointer;
+       
+    }
+     
+    
     /* design part css end  */
 </style>
 <body>
@@ -125,8 +140,27 @@ if (isset($_POST["submit"])) {
       
         <button name="button" ><a href="logout.php">LogOut</a></button>
     </form>
-
- 
+    <section>
+    <form class="form" action="#" method="post">  
+    Enter the Number:<br>  
+    <input type="number" name="number" id="number">  
+    <input id="num" type="submit" name="submit" value="Submit" />  
+<?php   
+    if($_POST){  
+        $fact = 1;  
+        //getting value from input text box 'number'  
+        $number = $_POST['number'];  
+        echo "<h3 style='text-align: center;'>Factorial of $number:</h3>
+        ";  
+        //start loop  
+        for ($i = 1; $i <= $number; $i++){         
+            $fact = $fact * $i;  
+            }  
+            echo "<h3 style='text-align: center;'> $fact . </h3>";  
+    }  
+?> 
+</form> 
+</section> 
     <section class="php_img">
 <?php
 // Display all uploaded images from the "uploads" directory
