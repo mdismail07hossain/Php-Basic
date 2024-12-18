@@ -6,7 +6,6 @@ if(isset($_POST["subbtn"])){
    
     $number=$_POST['number'];
     $brand=$_POST['manufc'];
- 
     $connt->query("call product_d('$name','$number','$brand')");
 }
 ?>
