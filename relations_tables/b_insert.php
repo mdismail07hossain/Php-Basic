@@ -11,7 +11,6 @@ if(isset($_POST["subbtn"])){
 if(isset($_POST['delBtn'])) {
     $brId = $_POST['brand'];
     $connt->query("delete from product_info where id = $brId");
-
     // header("location: showData.php");
  
 }
