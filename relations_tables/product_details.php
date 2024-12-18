@@ -2,8 +2,7 @@
 $connt=mysqli_connect("localhost","root","","trianeere_info");
 
 if(isset($_POST["subbtn"])){
-    $name=$_POST['name'];
-   
+    $name=$_POST['name'];  
     $number=$_POST['number'];
     $brand=$_POST['manufc'];
     $connt->query("call product_d('$name','$number','$brand')");
