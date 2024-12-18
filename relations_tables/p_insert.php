@@ -95,18 +95,6 @@
 
 
 <?php 
-require_once('dbRootPath.php');
-
-if(isset($_POST['insertBtn'])) {
-    $brandName= $_POST['brand'];
-    $contact = $_POST['contact'];
-
-    var_dump ($brandName, $contact);
-
-    $insertBrand = $dbConnect->query("call insert_brand('$brandName', '$contact')");
-    header("Location:" . $_SERVER["PHP_SELF"]);
-    exit;
-}
 
 // add product 
 if(isset($_POST['addBtn'])) {
@@ -121,12 +109,5 @@ if(isset($_POST['addBtn'])) {
 
 // del info 
 
-if(isset($_POST['delBtn'])) {
-    $brId = $_POST['brand'];
-    $delete = $dbConnect->query("delete from products_info where id = '$brId'");
-
-    // header("location: showData.php");
- 
-}
 
 ?>
