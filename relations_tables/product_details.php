@@ -6,7 +6,7 @@ if(isset($_POST["subbtn"])){
     // $email=$_POST['email'];
     $number=$_POST['number'];
     $brand=$_POST['manufc'];
-    // insert query create here 
+ 
     $connt->query("call product_d('$name','$number','$brand')");
 }
 ?>
