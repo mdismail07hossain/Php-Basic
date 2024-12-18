@@ -26,7 +26,7 @@
                 <select name="brandName" id="brandName">
                 <?php
                         $dbConnect = mysqli_connect("localhost","root","","company_database");
-                        $manuFac = $dbConnect->query(('select * from brand_info'));
+                        $manuFac = $dbConnect->query(('select * from brand_name'));
                         while(list($brId,$brName) = $manuFac->fetch_row()) {
                             echo "<option value='$brId'>$brName</option>";
                         }
@@ -51,7 +51,7 @@ if(isset($_POST['addBtn'])) {
     $prName = $_POST['name'];
     $brandName = $_POST['brandName'];
     $price = $_POST['price'];
-
+    $dbConnect = mysqli_connect("localhost","root","","company_database");
     $insertProduct = $dbConnect->query("call p_insert('$prName', '$brandName', '$price')");
     header("Location:" . $_SERVER["PHP_SELF"]);
     exit;
