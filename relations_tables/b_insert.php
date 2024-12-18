@@ -8,6 +8,13 @@ if(isset($_POST["subbtn"])){
     // insert query create here 
     $connt->query("call b_insert('$name','$number')");
 }
+if(isset($_POST['delBtn'])) {
+    $brId = $_POST['brand'];
+    $connt->query("delete from product_info where id = $brId");
+
+    // header("location: showData.php");
+ 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,5 +105,24 @@ if(isset($_POST["subbtn"])){
             <input type="submit" value="Submit" name="subbtn">
         </form>
     </div>
+       <section>
+            <form action="" method="post">
+                <div class="inputBox">
+                    <label for="brand">BrandName</label>
+                 <select name="brand" id="brandName" required>
+                    <?php
+                       
+                        $manuFac = $connt->query('SELECT * FROM brand_name');
+                        while (list($brId, $brName) = $manuFac->fetch_row()) {
+                            echo "<option value='$brId'>$brName</option>";
+                        }
+                    ?>
+                </select>
+                </div>
+                <div class="btn">
+                    <input type="submit" value="delete" name="delBtn">
+                </div>
+            </form>
+    </section>
 </body>
 </html>
