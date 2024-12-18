@@ -9,36 +9,8 @@
     <title>Insert Brand</title>
 </head>
 <body>
-    <section>
-        <form action="" method="post">
-            
-            <div class="inputBox">
-                <label for="brand">BrandName</label>
-                <select name="brand" id="brand">
-                    <option value="" select="selected">Select Brand</option>
-                    <option value="walton">Walton</option>
-                    <option value="redmi">Redmi</option>
-                    <option value="samsung">samsung</option>
-                    <option value="apple">Apple</option>
-                    <option value="vivo">Vivo</option>
-                    <option value="oppp">Oppo</option>
-                    <option value="sony">Sony</option>
-                    <option value="huyai">huyai</option>
-                    <option value="infinix">Infinix</option>
-                </select>
-            </div>
-            <div class="inputBox">
-                <label for="contact">Contact</label>
-                <input type="tel" name="contact" id="contact">
-            </div>
-
-            <div class="btn">
-                <input type="submit" value="Insert" name="insertBtn">
-            </div>
-        </form>
-    </section>
-
-    <br><br><br>
+   
+          
     <section>
         <form action="" method="post">
         <div class="inputBox">
@@ -53,7 +25,7 @@
                 <label for="brandName">BrandName</label>
                 <select name="brandName" id="brandName">
                 <?php
-                        require_once('dbRootPath.php');
+                        $dbConnect = mysqli_connect("localhost","root","","company_database");
                         $manuFac = $dbConnect->query(('select * from brand_info'));
                         while(list($brId,$brName) = $manuFac->fetch_row()) {
                             echo "<option value='$brId'>$brName</option>";
@@ -67,29 +39,7 @@
                 <input type="submit" value="addBtn" name="addBtn">
             </div>
         </form>
-    </section>
-
-    <br><br><br>
-    <section>
-            <form action="" method="post">
-                <div class="inputBox">
-                    <label for="brand">BrandName</label>
-                    <select name="brand" id="brand">
-                        <?php
-                                require_once('dbRootPath.php');
-                                $manuFac = $dbConnect->query(('select * from brand_info'));
-                                while(list($brId,$brName) = $manuFac->fetch_row()) {
-                                    echo "<option value='$brId'>$brName</option>";
-                                }
-                            ?>
-                    </select>
-                </div>
-                <div class="btn">
-                    <input type="submit" value="delete" name="delBtn">
-                </div>
-            </form>
-    </section>
-
+    </section> 
 </body>
 </html>
 
@@ -102,7 +52,7 @@ if(isset($_POST['addBtn'])) {
     $brandName = $_POST['brandName'];
     $price = $_POST['price'];
 
-    $insertProduct = $dbConnect->query("call add_products('$prName', '$brandName', '$price')");
+    $insertProduct = $dbConnect->query("call p_insert('$prName', '$brandName', '$price')");
     header("Location:" . $_SERVER["PHP_SELF"]);
     exit;
 }
