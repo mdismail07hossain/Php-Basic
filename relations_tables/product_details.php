@@ -3,7 +3,7 @@ $connt=mysqli_connect("localhost","root","","trianeere_info");
 
 if(isset($_POST["subbtn"])){
     $name=$_POST['name'];
-    // $email=$_POST['email'];
+   
     $number=$_POST['number'];
     $brand=$_POST['manufc'];
  
