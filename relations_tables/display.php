@@ -75,8 +75,8 @@
             <th>Product Price</th>
         </tr>
         <?php
-        $connt = mysqli_connect("localhost", "root", "", "trianeere_info");
-        $dis = $connt->query("SELECT * FROM display");
+        $connt = mysqli_connect("localhost", "root", "", "company_database");
+        $dis = $connt->query("SELECT * FROM p_details");
         $count = 1;
         while (list($name, $contact, $pname, $price) = $dis->fetch_row()) {
             $count++;
