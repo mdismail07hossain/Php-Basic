@@ -7,6 +7,7 @@ if(isset($_POST["subbtn"])){
     $number=$_POST['number'];
     // insert query create here 
     $connt->query("call b_insert('$name','$number')");
+      header("location: p_insert.php");
 }
 
 ?>
