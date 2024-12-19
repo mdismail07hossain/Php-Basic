@@ -3,7 +3,7 @@ $connt=mysqli_connect("localhost","root","","company_database");
 if(isset($_POST['delBtn'])) {
     $brId = $_POST['brand'];
     $connt->query("delete from brand_name where id = $brId");
-    // header("location: showData.php");
+      header("location: display.php");
  
 }
 ?>
