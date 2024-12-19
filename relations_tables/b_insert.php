@@ -8,12 +8,7 @@ if(isset($_POST["subbtn"])){
     // insert query create here 
     $connt->query("call b_insert('$name','$number')");
 }
-if(isset($_POST['delBtn'])) {
-    $brId = $_POST['brand'];
-    $connt->query("delete from brand_name where id = $brId");
-    // header("location: showData.php");
- 
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
