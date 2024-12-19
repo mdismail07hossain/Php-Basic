@@ -1,3 +1,11 @@
+<?php 
+if(isset($_POST['delBtn'])) {
+    $brId = $_POST['brand'];
+    $connt->query("delete from brand_name where id = $brId");
+    // header("location: showData.php");
+ 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
