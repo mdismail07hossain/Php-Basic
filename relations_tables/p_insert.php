@@ -117,7 +117,7 @@ if(isset($_POST['addBtn'])) {
     $price = $_POST['price'];
     $dbConnect = mysqli_connect("localhost","root","","company_database");
     $insertProduct = $dbConnect->query("call p_insert('$prName', '$brandName', '$price')");
-    header("Location:" . $_SERVER["PHP_SELF"]);
+    header("Location: display.php");
     exit;
 }
 
