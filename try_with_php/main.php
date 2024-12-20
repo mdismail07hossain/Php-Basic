@@ -19,15 +19,18 @@
             <option value="toyota">toyota</option>
             <option value="redmi">redmi</option>
             <option value="oppo">oppo</option>
-        </select><br><br>
-        <label for="contact">Contact</label><br><br>
+        </select>
+        <br><br>
+        <label for="contact">Contact</label>
         <input type="text" name="contact">
+        <br><br>
         <input type="submit" name="btn" value="Submit">
     </form>
     <br><br>
     <form action="#" method="post">
         <label for="name">P_name:</label>
-        <input type="text" name="p_name"><br><br>
+        <input type="text" name="p_name">
+        <br><br>
         <label for="bname">Brand_Name:</label>
         <select name="bname" id="">
             <?php
@@ -38,6 +41,11 @@
                 }
             ?>
         </select>
+        <br><br>
+        <label for="price">Price:</label>
+        <input type="text" name="price">
+        <br><br>
+        <input type="submit" name="btsub" value="Submit">
     </form>
 </body>
 </html>
@@ -47,5 +55,11 @@ if(isset($_POST["btn"])){
     $brand = $_POST['brand'];
     $contact = $_POST['contact'];
     $connt->query("call b_insert('$brand','$contact')");
+}
+if (isset($_POST["btsub"])) {
+    $name= $_POST["p_name"];
+    $b_name = $_POST["bname"];
+    $price= $_POST["price"];
+    $connt->query("call p_insert('$name','$b_name','$price')");
 }
 ?>
