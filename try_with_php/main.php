@@ -23,3 +23,7 @@
     </form>
 </body>
 </html>
+<?php 
+$connt = mysqli_connect("localhost","root","","company_databases");
+
+?>
