@@ -19,11 +19,12 @@
             <option value="toyota">toyota</option>
             <option value="redmi">redmi</option>
             <option value="oppo">oppo</option>
-        </select>
+        </select><br>
+        <input type="submit" name="btn" value="Submit">
     </form>
 </body>
 </html>
 <?php 
 $connt = mysqli_connect("localhost","root","","company_databases");
-
+if(isset($_POST[""]))
 ?>
