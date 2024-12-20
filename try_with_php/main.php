@@ -19,12 +19,18 @@
             <option value="toyota">toyota</option>
             <option value="redmi">redmi</option>
             <option value="oppo">oppo</option>
-        </select><br>
+        </select><br><br>
+        <label for="contact">Contact</label><br><br>
+        <input type="text" name="contact">
         <input type="submit" name="btn" value="Submit">
     </form>
 </body>
 </html>
 <?php 
 $connt = mysqli_connect("localhost","root","","company_databases");
-if(isset($_POST[""]))
+if(isset($_POST["btn"])){
+    $brand = $_POST['brand'];
+    $contact = $_POST['contact'];
+    $connt->query("call b_insert('$brand','$contact')");
+}
 ?>
