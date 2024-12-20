@@ -24,6 +24,21 @@
         <input type="text" name="contact">
         <input type="submit" name="btn" value="Submit">
     </form>
+    <br><br>
+    <form action="#" method="post">
+        <label for="name">P_name:</label>
+        <input type="text" name="p_name"><br><br>
+        <label for="bname">Brand_Name:</label>
+        <select name="bname" id="">
+            <?php
+                $connt=mysqli_connect("localhost","root","","company_databases");
+               $manufic=$connt->query("SELECT * FROM brand_name");
+                while(list($id,$name) = $manufic->fetch_row()){
+                    echo"<option values='$id'>$name</option>";
+                }
+            ?>
+        </select>
+    </form>
 </body>
 </html>
 <?php 
