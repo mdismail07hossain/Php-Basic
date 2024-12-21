@@ -88,7 +88,7 @@
                 <td>$pname</td>
                 <td>$price</td>
                 <td>
-                <a href='delete.php'>Delete</a>
+                <a href='delete_p.php'>Delete</a>
                 </td>
             </tr>
             ";
