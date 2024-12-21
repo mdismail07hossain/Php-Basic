@@ -72,6 +72,8 @@
             border-radius: 5px;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            background-color: #f44336;
+            border: 1px solid #f44336;
         }
     </style>
 </head>
