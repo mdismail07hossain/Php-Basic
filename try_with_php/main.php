@@ -6,7 +6,7 @@
     <title>Prosudouer</title>
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="" method="post">
         <label for="brand">Brand_Name:</label>
         <select name="brand" id="">
             <option value="souny">Souny</option>
@@ -27,7 +27,7 @@
         <input type="submit" name="btn" value="Submit">
     </form>
     <br><br>
-    <form action="#" method="post">
+    <form action="" method="post">
         <label for="name">P_name:</label>
         <input type="text" name="p_name">
         <br><br>
