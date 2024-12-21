@@ -63,6 +63,16 @@
             text-align: center;
             color: #333;
         }
+        a{
+            text-decoration: none;
+            padding: 8px 12px;
+            font-weight: bold;
+            font-size: 13px;
+            color: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -72,7 +82,8 @@
             <th>Brand</th>
             <th>Contact</th>
             <th>Product Name</th>
-            <th>Product Price</th>
+            <th>Product Price</th>       
+            <th>Product Delete</th>
         
         </tr>
         <?php
