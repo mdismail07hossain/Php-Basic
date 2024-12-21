@@ -73,6 +73,7 @@
             <th>Contact</th>
             <th>Product Name</th>
             <th>Product Price</th>
+        
         </tr>
         <?php
         $connt = mysqli_connect("localhost", "root", "", "company_database");
@@ -86,6 +87,9 @@
                 <td>$contact</td>
                 <td>$pname</td>
                 <td>$price</td>
+                <td>
+                <a href='delete.php'>Delete</a>
+                </td>
             </tr>
             ";
         }
