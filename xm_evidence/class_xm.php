@@ -60,22 +60,15 @@ if(isset($_POST['delBtn'])) {
             border-radius: 4px;
             box-sizing: border-box;
         }
-        form input[type="submit"] {
+        form .sumbmit input {
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        form input[type="submit"]:hover {
+        form .sumbmit input:hover {
             background-color: #45a049;
-        }
-      .btn.delete{
-            background-color: #rgb(182, 23, 23)
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s; 
         }
         table {
             width: 100%;
@@ -97,14 +90,13 @@ if(isset($_POST['delBtn'])) {
         .inputBox {
             margin-bottom: 20px;
         }
-        .btn {
-            text-align: center;
-        }
+        
         .btn input {
             background-color: #f44336;
             color: white;
             padding: 10px 20px;
             border: none;
+            text-align: center;
             cursor: pointer;
             border-radius: 4px;
         }
@@ -129,7 +121,9 @@ if(isset($_POST['delBtn'])) {
             <label for="con">Contact:</label>
             <input type="number" name="con" id="con" required>
 
-            <input type="submit" name="btn" value="Submit">
+            <div class="sumbmit">
+                <input type="submit" name="btn" value="Submit">
+            </div>
         </form>
 
         <!-- Second Form: Product Information -->
@@ -151,7 +145,9 @@ if(isset($_POST['delBtn'])) {
                 ?>
             </select>
 
-            <input type="submit" name="btnsub" value="Submit">
+           <div class="sumbmit">
+             <input type="submit" name="btnsub" value="Submit">
+           </div>
         </form>
 
         <!-- Third Form: Delete Information -->
@@ -170,7 +166,7 @@ if(isset($_POST['delBtn'])) {
             </div>
 
             <div class="btn">
-                <input class="delete" type="submit" value="Delete" name="delBtn">
+                <input  type="submit" value="Delete" name="delBtn">
             </div>
         </form>
 
