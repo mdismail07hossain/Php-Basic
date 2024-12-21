@@ -75,6 +75,9 @@
             background-color: #f44336;
             border: 1px solid #f44336;
         }
+        a:hover{
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
