@@ -14,12 +14,12 @@ if(isset($_POST['btnsub'])){
         //     header("location:all_dispaly.php");
         // }
 }
-// if(isset($_POST['delBtn'])) {
-//     $id = $_POST['brand'];
-//     $connt->query("delete from n_student where id=$id");
-//     //   header("location: display.php");
+if(isset($_POST['delBtn'])) {
+    $id = $_POST['brand'];
+    $connt->query("delete from manufacturer where id=$id");
+    //   header("location: display.php");
  
-// }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,84 +29,114 @@ if(isset($_POST['btnsub'])){
     <title>Product_Management</title>
 </head>
 <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        form {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        form input, form select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        form .sumbmit input {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        form .sumbmit input:hover {
-            background-color: #45a049;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table th, table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        table th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        table tr:hover {
-            background-color: #f1f1f1;
-        }
-        .inputBox {
-            margin-bottom: 20px;
-        }
-        
-        .btn input {
-            background-color: #f44336;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .btn input:hover {
-            background-color: #e53935;
-        }
-    </style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #444;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #009688;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 20px 0;
+    padding: 25px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form select:focus {
+    border-color: #009688;
+    box-shadow: 0 0 8px rgba(0, 150, 136, 0.3);
+    outline: none;
+}
+
+form .submit input {
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form .submit input:hover {
+    background-color: #00796b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #009688;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.inputBox {
+    margin-bottom: 30px;
+}
+
+.btn input {
+    background-color: #e53935;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn input:hover {
+    background-color: #d32f2f;
+}
+</style>
 <body>
     
     <div class="container">
@@ -178,7 +208,7 @@ if(isset($_POST['btnsub'])){
             </tr>
             <?php
                 $connt = mysqli_connect("localhost", "root", "", "student_info");
-                $dis = $connt->query("SELECT * FROM p_display");
+                $dis = $connt->query("SELECT * FROM valid_p");
                 while (list($name, $contact, $pname, $price) = $dis->fetch_row()) {
                    
                          echo "
