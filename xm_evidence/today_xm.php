@@ -15,7 +15,7 @@ if(isset($_POST['btnsub'])){
 if(isset($_POST['delBtn'])) {
     $id = $_POST['brand'];
     $connt->query("delete from manufacturer where id=$id");
-    //   header("location: display.php");
+   
  
 }
 ?>
