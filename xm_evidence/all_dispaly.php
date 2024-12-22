@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All_Uper</title>
 </head>
+<style>
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .inputBox {
+            margin-bottom: 20px;
+        }
+        
+        .btn input {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn input:hover {
+            background-color: #e53935;
+        }
+</style>
 <body>
      <h1>Product Display</h1>
         <table>

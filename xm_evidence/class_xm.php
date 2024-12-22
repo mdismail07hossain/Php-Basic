@@ -8,9 +8,12 @@ if(isset($_POST['btn'])){
 }
 if(isset($_POST['btnsub'])){
     $pname=$_POST["pname"];
-    $addr=$_POST["price"];
+    $price=$_POST["price"];
     $cont=$_POST["brand"];
-    $connt->query("call r_insert('$pname','$addr','$cont')");
+    $connt->query("call r_insert('$pname','$price','$cont')");
+        if($price>5000){
+            header("location:all_dispaly.php");
+        }
 }
 if(isset($_POST['delBtn'])) {
     $id = $_POST['brand'];
