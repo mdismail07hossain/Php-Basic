@@ -10,9 +10,7 @@ if(isset($_POST['btnsub'])){
     $price=$_POST["price"];
     $cont=$_POST["brand"];
     $connt->query("call p_insert('$pname','$price','$cont')");
-        // if($price>5000){
-        //     header("location:all_dispaly.php");
-        // }
+        
 }
 if(isset($_POST['delBtn'])) {
     $id = $_POST['brand'];
