@@ -182,7 +182,7 @@ if(isset($_POST['delBtn'])) {
             </tr>
             <?php
                 $connt = mysqli_connect("localhost", "root", "", "student_info");
-                $dis = $connt->query("SELECT * FROM product_v");
+                $dis = $connt->query("SELECT * FROM display_info");
                 while (list($name, $address, $contact, $pname, $price) = $dis->fetch_row()) {
                    
                          echo "
