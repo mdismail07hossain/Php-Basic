@@ -85,7 +85,8 @@ form input:focus, form select:focus {
     padding: 14px 25px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
     transition: background-color 0.3s;
 }
  .sumbmit input:hover {
