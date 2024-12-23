@@ -78,7 +78,7 @@ form input:focus, form select:focus {
     outline: none;
 }
 
-form .submit input {
+ .sumbmit input {
     background-color: #009688;
     color: white;
     border: none;
