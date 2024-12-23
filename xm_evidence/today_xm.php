@@ -90,6 +90,8 @@ form .submit input {
 }
  .sumbmit input:hover {
     background-color:rgb(65, 121, 0);
+    color: white;
+    transition: all linear 0.3s;
 }
 
 table {
