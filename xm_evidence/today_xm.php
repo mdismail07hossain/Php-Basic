@@ -91,6 +91,8 @@ form .submit input {
  .sumbmit input:hover {
     background-color:rgb(65, 121, 0);
     color: white;
+    font-weight: 600;
+    font-size: 18px;
     transition: all linear 0.3s;
 }
 
