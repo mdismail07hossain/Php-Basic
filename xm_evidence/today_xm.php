@@ -131,7 +131,8 @@ table tr:hover {
     text-align: center;
     cursor: pointer;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
     transition: background-color 0.3s;
 }
 
