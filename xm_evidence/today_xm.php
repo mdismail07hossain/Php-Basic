@@ -88,8 +88,7 @@ form .submit input {
     font-size: 16px;
     transition: background-color 0.3s;
 }
-
-form .submit input:hover {
+ .sumbmit input:hover {
     background-color: #00796b;
 }
 
