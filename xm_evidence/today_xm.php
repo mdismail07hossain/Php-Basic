@@ -90,7 +90,7 @@ form input:focus, form select:focus {
     transition: background-color 0.3s;
 }
  .sumbmit input:hover {
-    background-color:rgb(65, 121, 0);
+    background-color:rgb(10, 93, 99);
     color: white;
     font-weight: 600;
     font-size: 18px;
