@@ -1,11 +1,5 @@
 <?php 
-$connt=mysqli_connect("localhost","root","","student_info");
-if(isset($_POST['delBtn'])) {
-    $id = $_POST['brand'];
-    $connt->query("delete from n_student where id=$id");
-    //   header("location: display.php");
- 
-}
+
 if(isset($_POST["back"])){
     header("location:insert_p.php");
 }
@@ -16,7 +10,7 @@ if(isset($_POST["back"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class_xm</title>
+    <title>Show_produch_list</title>
     <style>
         body {
             font-family: Arial, sans-serif;
