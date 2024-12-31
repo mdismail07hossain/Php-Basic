@@ -7,7 +7,7 @@ if(isset($_POST['btnsub'])){
     $cont=$_POST["brand"];
     $connt->query("call r_insert('$pname','$price','$cont')");
         
-            // header("location:display.php");
+            header("location:display.php");
         
 }
 if(isset($_POST["back"])){
@@ -20,7 +20,7 @@ if(isset($_POST["back"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class_xm</title>
+    <title>Product Insert</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -128,7 +128,7 @@ if(isset($_POST["back"])){
 </form>
 </div>
     <div class="container">
-        <h1>Class Information Form</h1>
+        <h1>Product Add Form</h1>
 
         
         
