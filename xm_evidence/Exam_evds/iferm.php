@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>document</title>
+  <title>MYSQL</title>
 </head>
 <body class="bg-gray-100 h-screen">
   <div class="flex h-full">
     <!-- Sidebar -->
-    <div class="w-64 bg-teal-900 text-white flex flex-col">
-      <div class="p-4 text-center text-xl font-bold border-b border-gray-700">
+    <div class="w-64 bg-blue-900 text-white flex flex-col">
+      <div class="p-4 text-center text-xl font-bold border-b border-gray-800">
         Menu bar
       </div>
-      <nav class="flex-1">
+      <nav class="flex-1 text-lg font-bold">
         <ul class="space-y-2 p-4">
           <li>
             <a href="insert_b.php" target="content-frame"
