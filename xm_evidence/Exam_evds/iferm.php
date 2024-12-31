@@ -11,7 +11,7 @@
     <!-- Sidebar -->
     <div class="w-64 bg-blue-900 text-white flex flex-col">
       <div class="p-4 text-center text-xl font-bold border-b border-gray-800">
-        Menu bar
+            
       </div>
       <nav class="flex-1 text-lg font-bold">
         <ul class="space-y-2 p-4">
