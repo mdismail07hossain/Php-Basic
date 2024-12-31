@@ -28,12 +28,17 @@
             </a>
           </li>
           <li>
-            <a href="display.php" target="content-frame"
+            <a href="delete_b.php" target="content-frame"
               class="block p-2 rounded hover:bg-blue-700">
               Delete Manufacturer
             </a>
           </li>
-         
+          <li>
+            <a href="display.php" target="content-frame"
+              class="block p-2 rounded hover:bg-blue-700">
+              Product List
+            </a>
+          </li>
         </ul>
       </nav>
       
@@ -44,7 +49,7 @@
       <iframe 
         name="content-frame" 
         class="w-full h-full border-none p-4"
-        src="display.php">
+        src="insert_b.php">
       </iframe>
     </div>
   </div>
