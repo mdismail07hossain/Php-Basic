@@ -10,6 +10,9 @@ if(isset($_POST['btnsub'])){
             header("location:display.php");
         
 }
+if(isset($_POST["back"])){
+    header("location:insert_b.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -94,14 +97,36 @@ if(isset($_POST['btnsub'])){
             text-align: center;
             cursor: pointer;
             border-radius: 4px;
+
         }
         .btn input:hover {
             background-color: #e53935;
         }
+        .back_bt{
+            display: flex;
+            justify-content: end;
+        }
+        .form{
+            background: transparent;
+            width: 100px;
+        }
+        button{
+            background-color: blue;
+            border: none;
+            padding: 6px 10px;
+            font-weight: 600;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
     </style>
 </head>
 <body>
-
+<div class="back_bt" >
+    <form class="form" action="" method="post">
+    <button type="submit" name="back">Back To Brand</button>
+</form>
+</div>
     <div class="container">
         <h1>Class Information Form</h1>
 
