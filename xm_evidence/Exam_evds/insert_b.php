@@ -5,7 +5,7 @@ if(isset($_POST['btn'])){
     $add=$_POST["add"];
     $con=$_POST["con"];
     $connt->query("call s_insert('$name','$add','$con')");
-        header("location:insert_p.php");
+        // header("location:insert_p.php");
 }
 
  

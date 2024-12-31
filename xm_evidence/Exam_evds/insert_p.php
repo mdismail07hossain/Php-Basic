@@ -7,7 +7,7 @@ if(isset($_POST['btnsub'])){
     $cont=$_POST["brand"];
     $connt->query("call r_insert('$pname','$price','$cont')");
         
-            header("location:display.php");
+            // header("location:display.php");
         
 }
 if(isset($_POST["back"])){

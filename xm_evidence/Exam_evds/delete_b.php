@@ -3,7 +3,7 @@ $connt=mysqli_connect("localhost","root","","student_info");
 if(isset($_POST['delBtn'])) {
     $id = $_POST['brand'];
     $connt->query("delete from n_student where id=$id");
-    //   header("location: display.php");
+      header("location: display.php");
  
 }
 ?>

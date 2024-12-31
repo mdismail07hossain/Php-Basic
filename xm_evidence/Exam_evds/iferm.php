@@ -24,7 +24,7 @@
           <li>
             <a href="insert_p.php" target="content-frame"
               class="block p-2 rounded hover:bg-blue-700">
-              Add Product
+              Add Product Here
             </a>
           </li>
           <li>
@@ -36,7 +36,7 @@
           <li>
             <a href="display.php" target="content-frame"
               class="block p-2 rounded hover:bg-blue-700">
-              Product List
+            Show Product List
             </a>
           </li>
         </ul>
