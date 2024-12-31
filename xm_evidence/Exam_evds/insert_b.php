@@ -16,7 +16,7 @@ if(isset($_POST['btn'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class_xm</title>
+    <title>Brand insert</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,7 +102,7 @@ if(isset($_POST['btn'])){
 <body>
 
     <div class="container">
-        <h1>Class Information Form</h1>
+        <h1>Manufacturer Add Form</h1>
 
         <!-- First Form: Personal Information -->
         <form action="" method="post">
