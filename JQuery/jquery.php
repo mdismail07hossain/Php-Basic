@@ -12,11 +12,15 @@
 <body>
     <div class="one"></div>
     <div class="one"></div>
-    <button onclick="animi()">Start Animation</button>
+    <button class="button1"  onclick="animi()">Start Animation</button>
+    <button class="button2" onclick="animaout()">Go Back</button>
     <script src="./js/jry.js"></script>
     <script>
         function animi(){
             $('.one').hide(5000);
+        }
+        function animaout(){
+            $('.one').show(5000);
         }
     </script>
 </body>
