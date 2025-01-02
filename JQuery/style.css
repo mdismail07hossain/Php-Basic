@@ -7,10 +7,8 @@
   border-radius: 50%;
 }
 section {
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: end;
-  gap: 20px; */
+  display: flex;
+  justify-content: space-between;
 }
 .one1 {
   width: 100px;

@@ -20,10 +20,16 @@
          <div class="one3"></div>
     </div>
    </section>
-    <button class="button1"  onclick="animi()">Start Animation</button>
-    <button class="button2" onclick="animaout()">Go Back</button>
-    <button class="button1"  onclick="animi1()">Start Animation</button>
-    <button class="button2" onclick="animaout1()">Go Back</button>
+    <section>
+          <div>
+            <button class="button1"  onclick="animi()">Start Animation</button>
+            <button class="button2" onclick="animaout()">Go Back</button>
+   </div>
+    <div>
+            <button class="button1"  onclick="animi1()">Start Animation</button>
+            <button class="button2" onclick="animaout1()">Go Back</button>
+    </div>
+    </section>
     <script src="./js/jry.js"></script>
     <script>
         function animi(){
