@@ -113,7 +113,7 @@ if(isset($_POST['btn'])){
             <input type="text" name="add" id="add" required>
 
             <label for="con">Contact:</label>
-            <input type="number" name="con" id="con" required>
+            <input type="text" name="con" id="con" required>
 
             <div class="sumbmit">
                 <input type="submit" name="btn" value="Submit">
