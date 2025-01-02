@@ -6,11 +6,12 @@
   background-color: rgb(128, 7, 97);
   /* border-radius: 20px; */
 }
-button {
+.button2 {
   padding: 10px 20px;
   margin-top: 20px;
   font-size: 16px;
-  background-color: #4caf50;
+  font-weight: 700;
+  background-color: #114ffa;
   color: white;
   border: none;
   border-radius: 5px;
@@ -18,6 +19,22 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #45a049;
+.button2:hover {
+  background-color: #14045f;
+}
+.button1 {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fa1911;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button1:hover {
+  background-color: #5f0404;
 }
