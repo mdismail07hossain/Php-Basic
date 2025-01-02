@@ -10,17 +10,37 @@
 
 </head>
 <body>
-    <div class="one"></div>
-    <div class="one"></div>
+   <section>
+    <div>
+         <div class="one"></div>
+         <div class="one1"></div>
+    </div>
+    <div>
+         <div class="one2"></div>
+         <div class="one3"></div>
+    </div>
+   </section>
     <button class="button1"  onclick="animi()">Start Animation</button>
     <button class="button2" onclick="animaout()">Go Back</button>
+    <button class="button1"  onclick="animi1()">Start Animation</button>
+    <button class="button2" onclick="animaout1()">Go Back</button>
     <script src="./js/jry.js"></script>
     <script>
         function animi(){
             $('.one').hide(5000);
+            $('.one1').hide(5000);
         }
         function animaout(){
             $('.one').show(5000);
+            $('.one1').show(5000);
+        }
+        function animi1(){
+            $('.one2').hide(5000);
+            $('.one3').hide(5000);
+        }
+        function animaout1(){
+            $('.one2').show(5000);
+            $('.one3').show(5000);
         }
     </script>
 </body>

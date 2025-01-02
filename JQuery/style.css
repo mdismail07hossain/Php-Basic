@@ -1,9 +1,42 @@
 .one {
-  width: 100%;
+  width: 100px;
   height: 100px;
   padding: 30px;
   margin-top: 20px;
-  background-color: rgb(128, 7, 97);
+  background-color: rgb(196, 10, 10);
+  border-radius: 50%;
+}
+section {
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 20px; */
+}
+.one1 {
+  width: 100px;
+  height: 100px;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: rgb(11, 128, 7);
+  border-radius: 50%;
+  /* border-radius: 20px; */
+}
+.one2 {
+  width: 100px;
+  height: 100px;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: rgb(17, 62, 209);
+  border-radius: 50%;
+  /* border-radius: 20px; */
+}
+.one3 {
+  width: 100px;
+  height: 100px;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: rgb(180, 20, 201);
+  border-radius: 50%;
   /* border-radius: 20px; */
 }
 .button2 {
