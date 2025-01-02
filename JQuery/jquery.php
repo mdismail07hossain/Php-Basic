@@ -12,10 +12,13 @@
 <body>
     <div class="one"></div>
     <div class="one"></div>
+    <button onclick="animi">Start Animation</button>
     <script src="./js/jry.js"></script>
     <script>
-        $('.one').hide(5000);
-        $('.one').hide(5000);
+        function animi{
+            $('.one').hide(5000);
+            $('.one').hide(5000);
+        }
     </script>
 </body>
 </html>
