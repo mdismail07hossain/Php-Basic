@@ -46,7 +46,6 @@ section {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-/* button style here */
 .button2:hover {
   background-color: #14045f;
 }
