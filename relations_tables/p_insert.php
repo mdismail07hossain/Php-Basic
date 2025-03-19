@@ -75,7 +75,7 @@
 <body>
 
     <section>
-        <h1>Insert Brand</h1>
+        <h1>Insert Product</h1>
         <form action="" method="post">
             <div class="inputBox">
                 <label for="name">Name</label>
@@ -89,7 +89,7 @@
                 <label for="brandName">Brand Name</label>
                 <select name="brandName" id="brandName" required>
                     <?php
-                        $dbConnect = mysqli_connect("localhost", "root", "", "company_database");
+                        $dbConnect = mysqli_connect("localhost", "root", "", "company_databases");
                         $manuFac = $dbConnect->query('SELECT * FROM brand_name');
                         while (list($brId, $brName) = $manuFac->fetch_row()) {
                             echo "<option value='$brId'>$brName</option>";
@@ -98,7 +98,7 @@
                 </select>
             </div>
             <div class="btn">
-                <input type="submit" value="Add Brand" name="addBtn">
+                <input type="submit" value="Add Product" name="addBtn">
             </div>
         </form>
     </section>
@@ -115,7 +115,7 @@ if(isset($_POST['addBtn'])) {
     $prName = $_POST['name'];
     $brandName = $_POST['brandName'];
     $price = $_POST['price'];
-    $dbConnect = mysqli_connect("localhost","root","","company_database");
+    $dbConnect = mysqli_connect("localhost","root","","company_databases");
     $insertProduct = $dbConnect->query("call p_insert('$prName', '$brandName', '$price')");
     header("Location: display.php");
     exit;

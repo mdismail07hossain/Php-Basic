@@ -78,10 +78,27 @@
         a:hover{
             background-color: #d32f2f;
         }
+        .insertproduct{
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 8px 12px;
+            font-weight: bold;
+            font-size: 13px;
+            color: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            background-color:rgb(54, 57, 244);
+            border: 1px solid rgb(54, 82, 244);  
+        }
+        .insertproduct:hover{
+            background-color:rgb(78, 7, 192);
+        }
     </style>
 </head>
 <body>
     <h1>Product Display</h1>
+    <a class="insertproduct" href="p_insert.php">insert Product</a>
     <table>
         <tr>
             <th>Brand</th>
@@ -92,7 +109,7 @@
         
         </tr>
         <?php
-        $connt = mysqli_connect("localhost", "root", "", "company_database");
+        $connt = mysqli_connect("localhost", "root", "", "company_databases");
         $dis = $connt->query("SELECT * FROM p_details");
         $count = 1;
         while (list($name, $contact, $pname, $price) = $dis->fetch_row()) {

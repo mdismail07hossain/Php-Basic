@@ -85,17 +85,16 @@
             echo "Animal is speaking.";
         }
     }
-
-    class Dog extends Animal {
-        public function speak() {
-            echo "Dog is barking.";
-        }
+class Dog extends Animal{
+    public function fkskjs(){
+               
     }
+}
 
     $dog = new Dog();
-
+        $dog->speak();
     // instanceof দিয়ে চেক করা
-    if ($dog instanceof Animal) {
+    if ($dog instanceof Dog) {
         echo "The object is an instance of Dog.";
     } else {
         echo "The object is not an instance of Dog.";
@@ -116,7 +115,7 @@
 
     $child2 = new Children();
 
-    if($child2 instanceof Childre){
+    if($child2 instanceof Parentc){
         echo "The object is an instance of Parent!";
     }else{
         echo "The boject is not an instance of Parent!";

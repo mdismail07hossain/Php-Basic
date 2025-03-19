@@ -1,5 +1,5 @@
 <?php 
-$connt=mysqli_connect("localhost","root","","company_database");
+$connt=mysqli_connect("localhost","root","","company_databases");
 
 if(isset($_POST["subbtn"])){
     $name=$_POST['name'];
