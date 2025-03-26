@@ -100,4 +100,41 @@ print_r($reversed);
 // krsort() - Associative array কে key অনুসারে descending order এ সাজায়
 
 // usort() - User-defined comparison function ব্যবহার করে array সাজায়
+
+//♨️ Array Operations in PHP (Bangla Explanation with Examples)
+// 1. Array Slice vs Splice in PHP
+// PHP-তেও Slice (অপরিবর্তনীয়) আৰু Splice (পরিবর্তনশীল) ব্যৱহাৰ কৰা হয়।
+
+// Array Slice (অপরিবর্তনীয়)
+// array_slice() এটা Array-ৰ অংশ কাটি উলিয়ায় কিন্তু মূল Array-ত কোনো পৰিবৰ্তন নকৰে।
+
+// সিনট্যাক্স: array_slice(array, startIndex, length)
+
+// উদাহৰণ:
+$fruits = ["Apple", "Banana", "Mango", "Orange", "Lichi"];
+$slicedFruits = array_slice($fruits, 1, 3); // Index 1ৰ পৰা 3টা Element ল'ব
+print_r($slicedFruits); // ["Banana", "Mango", "Orange"]
+print_r($fruits); // মূল Array অপরিবর্তিত
+// Array Splice (পরিবর্তনশীল)
+// array_splice() এ Array-ৰ অংশ কাটি পেলায় বা নতুন Element যোগ কৰে (মূল Array পৰিবৰ্তন কৰে)।
+
+// সিনট্যাক্স: array_splice(array, startIndex, deleteCount, newItems)
+
+// উদাহৰণ:
+$fruits = ["Apple", "Banana", "Mango", "Orange"];
+$removed = array_splice($fruits, 1, 2, ["Pineapple", "Grapes"]); // Index 1ৰ পৰা 2টা Element আঁতৰাই নতুন যোগ কৰে
+print_r($removed); // ["Banana", "Mango"] (আঁতৰোৱা Elements)
+print_r($fruits); // ["Apple", "Pineapple", "Grapes", "Orange"] (পৰিবৰ্তিত Array)
+// 2. Array Swap in PHP (দুটা Element অদল-বদল কৰা)
+// PHP-ত Array-ৰ দুটা Element Swap কৰিবলৈ Temp Variable বা List() ব্যৱহাৰ কৰিব পাৰি।
+
+// উদাহৰণ (Temp Variableৰ সহায়ত):
+$numbers = [10, 20, 30, 40];
+function swap(&$arr, $i, $j) {
+    $temp = $arr[$i];
+    $arr[$i] = $arr[$j];
+    $arr[$j] = $temp;
+}
+swap($numbers, 1, 3); // Index 1 (20) আৰু Index 3 (40) Swap হ'ব
+print_r($numbers); // [10, 40, 30, 20]
 ?>
