@@ -137,4 +137,35 @@ function swap(&$arr, $i, $j) {
 }
 swap($numbers, 1, 3); // Index 1 (20) আৰু Index 3 (40) Swap হ'ব
 print_r($numbers); // [10, 40, 30, 20]
+
+// উদাহৰণ (List()ৰ সহায়ত):
+$numbers = [10, 20, 30, 40];
+[$numbers[1], $numbers[3]] = [$numbers[3], $numbers[1]]; // Swap 20 & 40
+print_r($numbers); // [10, 40, 30, 20]
+
+//  3. Finding Largest & Second Largest in PHP
+// Simple Loop Method
+$numbers = [10, 5, 20, 8, 25, 15];
+$largest = $secondLargest = PHP_INT_MIN;
+
+foreach ($numbers as $num) {
+    if ($num > $largest) {
+        $secondLargest = $largest;
+        $largest = $num;
+    } elseif ($num > $secondLargest && $num != $largest) {
+        $secondLargest = $num;
+    }
+}
+
+echo "Largest: " . $largest . "\n"; // 25
+echo "Second Largest: " . $secondLargest . "\n"; // 20
+
+// Using Sort (যদি Duplicate থাকে)
+$numbers = [10, 5, 20, 20, 25, 15];
+$uniqueSorted = array_unique($numbers); // Duplicate আঁতৰায়
+rsort($uniqueSorted); // Descending Orderত Sort কৰে
+
+echo "Largest: " . $uniqueSorted[0] . "\n"; // 25
+echo "Second Largest: " . $uniqueSorted[1] . "\n"; // 20
+
 ?>
